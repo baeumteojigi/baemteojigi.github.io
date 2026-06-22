@@ -3,572 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ★★★ 핵심 SEO 태그 (배움터지기 브랜드 중심 검색 최적화) ★★★ -->
-    <title>배움터지기 | KNOWLEDGE GUARDIAN 공식 웹사이트</title>
-    <meta name="description" content="배움터지기(KNOWLEDGE GUARDIAN)는 전통 위에 세운 순수와 지혜를 수호하는 교육·콘텐츠 브랜드입니다. 핵심 가치, 상징 체계 및 교육 로드맵 소개.">
-    <meta name="keywords" content="배움터지기, KNOWLEDGE GUARDIAN, 지식 기술 태도, 전통 교육, AI 교육, 교육 브랜드">
-    
-    <!-- 네이버·구글 크롤링 허용 -->
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph (SNS 공유 시 예쁘게 노출되는 정보) -->
-    <meta property="og:title" content="배움터지기 공식 프로필">
-    <meta property="og:description" content="전통 위에 세운 순수와 지혜, 최고 가치를 향해 도약하는 배움터지기의 기록">
-    <meta property="og:url" content="https://yujongkyeong.github.io/">
-    <meta property="og:type" content="website">
-    
-    <!-- [선택사항] 상징 로고나 이미지가 있다면 주소를 넣으세요 -->
-    <meta property="og:image" content="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=500"> 
-
-    <!-- 고품격 폰트 프리텐다드 적용 -->
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-    
+    <title>PROTECTED VALUE SYSTEM | Knowledge Guardian</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
         :root {
-            --primary-teal: #005f73;
-            --light-teal: #0a9396;
-            --silver-bg: #f4f5f7;
-            --silver-border: #e2e8f0;
-            --dark-text: #111827;
-            --gray-text: #6b7280;
-            --white: #ffffff;
+            --teal: #008080;
+            --silver: #C0C0C0;
+            --dark: #1a1a1a;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-            letter-spacing: -0.02em;
         }
-
+        
         body {
-            background-color: var(--white);
-            color: var(--dark-text);
-            line-height: 1.6;
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #001f1f 0%, #002f2f 100%);
+            color: #e0f0f0;
+            line-height: 1.7;
             overflow-x: hidden;
         }
-
-        /* 1. Header (투명 블러 내비게이션) */
+        
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--primary-teal);
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo span {
-            font-size: 0.85rem;
-            font-weight: 400;
-            color: var(--gray-text);
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--dark-text);
-            font-weight: 500;
-            margin-left: 35px;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-teal);
-        }
-
-        /* 2. Hero Section */
-        .hero {
             height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .shield-container {
+            width: 280px;
+            height: 280px;
+            border: 8px solid var(--silver);
+            border-radius: 50%;
+            background: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            position: relative;
+            box-shadow: 0 0 60px rgba(0, 128, 128, 0.6);
+        }
+        
+        .shield {
+            width: 220px;
+            height: 240px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20% 20% 50% 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            color: #001f1f;
+        }
+        
+        .laurel {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+        
+        .stars {
+            font-size: 28px;
+            letter-spacing: 12px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
             padding: 0 20px;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            position: relative;
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 80% 20%, rgba(10, 147, 150, 0.08) 0%, transparent 50%);
-        }
-
-        .brand-img-area {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid var(--white);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
-            z-index: 10;
-            background: #eee;
-        }
-
-        .brand-img-area img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-sub {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--light-teal);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 15px;
-            z-index: 10;
-        }
-
-        .hero-title {
-            font-size: 2.6rem;
-            font-weight: 800;
-            line-height: 1.4;
-            margin-bottom: 25px;
-            color: var(--dark-text);
-            z-index: 10;
-        }
-
-        .hero-title span {
-            color: var(--primary-teal);
-        }
-
-        .hero-desc {
-            font-size: 1.15rem;
-            color: var(--gray-text);
-            max-width: 720px;
-            font-weight: 400;
-            z-index: 10;
-        }
-
-        /* 섹션 공통 스타일 */
-        section {
-            padding: 140px 10%;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--dark-text);
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            color: var(--gray-text);
-            font-size: 1.05rem;
-        }
-
-        /* 3. Protected Value System (핵심 가치) */
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-
-        .value-card {
-            background: var(--white);
-            padding: 50px 40px;
-            border-radius: 16px;
-            border: 1px solid var(--silver-border);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-            border-color: var(--light-teal);
-        }
-
-        .value-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background-color: var(--primary-teal);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .value-card:hover::before {
-            opacity: 1;
-        }
-
-        .value-num {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--light-teal);
+        
+        h1 {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 3.2rem;
             margin-bottom: 20px;
-            display: block;
+            letter-spacing: 4px;
         }
-
-        .value-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
+        
+        .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
-
-        .value-card p {
-            color: var(--gray-text);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* 4. Learning Process (성장 로드맵) */
-        .process-section {
-            background-color: #f9fafb;
-        }
-
-        .process-flex {
+        
+        .values {
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            font-size: 1.3rem;
         }
-
-        .process-card {
-            flex: 1;
-            min-width: 240px;
-            text-align: center;
-            background: var(--white);
+        
+        section {
+            padding: 100px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .identity {
+            background: #f8f8f8;
+            color: #222;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .element {
+            background: white;
             padding: 40px 30px;
-            border-radius: 14px;
-            border: 1px solid var(--silver-border);
-        }
-
-        .process-circle {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-teal);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .process-card h3 {
-            margin-bottom: 12px;
-            font-size: 1.25rem;
-        }
-
-        .process-card p {
-            color: var(--gray-text);
-            font-size: 0.9rem;
-        }
-
-        .process-arrow {
-            align-self: center;
-            font-size: 1.5rem;
-            color: #ccc;
-        }
-
-        /* 5. Identity System (브랜드 정체성) */
-        .identity-section {
-            background-color: var(--silver-bg);
-        }
-
-        .identity-container {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .identity-visual {
-            background: linear-gradient(135deg, var(--primary-teal) 0%, #003f4c 100%);
-            padding: 80px;
-            border-radius: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--white);
-            box-shadow: 0 30px 60px rgba(0,63,76, 0.15);
-            min-height: 450px;
-            text-align: center;
-        }
-
-        .visual-emblem {
-            border: 4px solid rgba(255,255,255,0.2);
-            padding: 40px;
-            border-radius: 50% 50% 50% 50% / 15% 15% 85% 85% ;
-        }
-
-        .visual-emblem h4 {
-            font-size: 1.8rem;
-            letter-spacing: 0.05em;
-            margin-bottom: 5px;
-        }
-
-        .visual-emblem p {
-            font-size: 0.8rem;
-            opacity: 0.7;
-            letter-spacing: 0.2em;
-        }
-
-        .identity-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        .identity-item {
-            background: var(--white);
-            padding: 30px;
             border-radius: 12px;
-            border: 1px solid rgba(0,0,0,0.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
         }
-
-        .identity-item h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-teal);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        
+        .element:hover {
+            transform: translateY(-10px);
         }
-
-        .identity-item p {
-            font-size: 0.9rem;
-            color: var(--gray-text);
-            line-height: 1.6;
+        
+        .element h3 {
+            color: var(--teal);
+            margin: 20px 0 15px;
+            font-size: 1.5rem;
         }
-
-        /* 6. Footer */
+        
         footer {
-            background-color: #111827;
-            color: #9ca3af;
-            padding: 80px 10% 40px 10%;
-            font-size: 0.9rem;
+            background: #001f1f;
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 0.95rem;
         }
-
-        .footer-top {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #374151;
-            padding-bottom: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-info h3 {
-            color: var(--white);
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .footer-info .rep-info {
-            font-size: 0.85rem;
-            color: #9ca3af;
-            margin-top: 5px;
-        }
-
-        .footer-links a {
-            color: #9ca3af;
-            text-decoration: none;
-            margin-left: 20px;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        @media (max-width: 1024px) {
-            .values-grid, .identity-container, .identity-grid, .process-flex {
-                grid-template-columns: 1fr;
-            }
-            .process-arrow { display: none; }
-            header { padding: 20px 5%; }
-            section { padding: 100px 5%; }
-            .hero-title { font-size: 2rem; }
+        
+        .ribbon {
+            background: linear-gradient(90deg, #C0C0C0, #e5e5e5, #C0C0C0);
+            color: #001f1f;
+            padding: 12px 60px;
+            display: inline-block;
+            font-weight: bold;
+            border-radius: 4px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
-
-    <!-- 1. HEADER -->
     <header>
-        <div class="logo">배움터지기 <span>KNOWLEDGE GUARDIAN</span></div>
-        <nav>
-            <a href="#home">HOME</a>
-            <a href="#values">CORE VALUE</a>
-            <a href="#process">PROCESS</a>
-            <a href="#identity">IDENTITY</a>
-        </nav>
+        <div class="hero-content">
+            <div class="shield-container">
+                <div class="shield">
+                    <div class="laurel"> laurel wreath </div>
+                    <div class="stars">★ ★ ★</div>
+                    <div style="margin-top:20px; font-size:28px;">📖</div>
+                </div>
+            </div>
+            
+            <h1>PROTECTED VALUE SYSTEM</h1>
+            <p class="subtitle">
+                전통 위에 세운 순수와 지혜<br>
+                안정한 열린 배움터에서 창의의 날개를 달아<br>
+                최고의 가치를 향해 도약합니다.
+            </p>
+            
+            <div class="values">
+                <span>수호 守護</span>
+                <span>균형 均衡</span>
+                <span>비상 飛翔</span>
+            </div>
+            
+            <div class="ribbon">KNOWLEDGE GUARDIAN</div>
+        </div>
     </header>
 
-    <!-- 2. HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="brand-img-area">
-            <!-- 트위터 프로필 주소나 브랜드 로고 주소를 여기에 넣으세요 -->
-            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=150" alt="배움터지기 상징 이미지">
+    <section class="identity">
+        <h2 style="text-align:center; font-size:2.8rem; margin-bottom:20px; color:#001f1f;">IDENTITY SYSTEM</h2>
+        <p style="text-align:center; max-width:800px; margin:0 auto 60px; font-size:1.2rem;">
+            배움터지기 방패 마크는 전통과 현대의 조화를 바탕으로<br>
+            학문을 수호하고 인격과 윤리를 지키는 상징 체계입니다.
+        </p>
+        
+        <div class="grid">
+            <div class="element">
+                <h3>청록색 바탕</h3>
+                <p>정서 안정과 치유 공간을 상징하며, 창의성 탐구와 투명하고 청렴한 교육 가치</p>
+            </div>
+            <div class="element">
+                <h3>월계관</h3>
+                <p>학문·덕행·인격에서 우수함을 추구하며 완전성과 끊임없는 성장을 의미</p>
+            </div>
+            <div class="element">
+                <h3>별 3개</h3>
+                <p>지식 · 기술 · 태도를 균형 있게 갖추어 개개인의 탁월함을 향해 나아가는 단계</p>
+            </div>
+            <div class="element">
+                <h3>책</h3>
+                <p>전통 위 열린 탐구, 학습과 연구 여정을 상징하며 전통과 현대성의 조화</p>
+            </div>
+            <div class="element">
+                <h3>리본</h3>
+                <p>견고한 기반을 상징하며, 지향하는 가치와 모토를 담는 그릇</p>
+            </div>
+            <div class="element">
+                <h3>은색 방패</h3>
+                <p>순수·성실과 평화·화합을 기반으로 지혜롭고 통찰력 있는 학문 추구</p>
+            </div>
         </div>
-        <div class="hero-sub">Knowledge Guardian</div>
-        <h1 class="hero-title">
-            전통 위에 세운 <span>순수</span>와 <span>지혜</span>
-        </h1>
-        <p class="hero-desc">
-            안정되고 열린 배움터에서 창의의 날개를 달아,<br>
-            지속 가능한 최고 가치를 향해 힘차게 도약합니다.
+    </section>
+
+    <section style="background:#001f1f; text-align:center;">
+        <h2 style="font-size:2.5rem; margin-bottom:40px;">KNOWLEDGE GUARDIAN</h2>
+        <p style="font-size:1.35rem; max-width:800px; margin:0 auto;">
+            학문을 수호하고, 균형을 지키며,<br>
+            더 높은 가치를 향해 비상합니다.
         </p>
     </section>
 
-    <!-- 3. PROTECTED VALUE SYSTEM -->
-    <section id="values">
-        <div class="section-header">
-            <h2>PROTECTED VALUE SYSTEM</h2>
-            <p>배움터지기가 온전히 수호하고 지향하는 브랜드 핵심 가치입니다.</p>
-        </div>
-        <div class="values-grid">
-            <div class="value-card">
-                <span class="value-num">01 / 수호 (守護)</span>
-                <h3>학문과 윤리의 수호</h3>
-                <p>전통적인 가치와 학문을 온전히 지키며, 인격과 교육적 윤리를 최우선으로 보호하는 견고한 기반이 됩니다.</p>
-            </div>
-            <div class="value-card">
-                <span class="value-num">02 / 균형 (均衡)</span>
-                <h3>지식·기술·태도의 균형</h3>
-                <p>지식(Knowledge), 기술(Skill), 태도(Attitude)를 입체적이고 균형 있게 가꾸어 치우침 없는 완전한 성장을 도모합니다.</p>
-            </div>
-            <div class="value-card">
-                <span class="value-num">03 / 비상 (飛翔)</span>
-                <h3>창의적 가치 비상</h3>
-                <p>안정된 열린 배움터 인프라 위에서 창의성의 날개를 펼쳐, 미래 지향적인 최고의 가치를 향해 도약합니다.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. LEARNING PROCESS -->
-    <section class="process-section" id="process">
-        <div class="section-header">
-            <h2>LEARNING PROCESS</h2>
-            <p>전통의 탐구에서 출발하여 균형 잡힌 최고 가치로 도약하는 브랜드 성장 로드맵입니다.</p>
-        </div>
-        <div class="process-flex">
-            <div class="process-card">
-                <div class="process-circle">01</div>
-                <h3>전통 탐구 (Tradition)</h3>
-                <p>기초와 근본을 올바르게 이해하고 깊이 있는 인문학적 소양을 쌓는 입문 단계</p>
-            </div>
-            <div class="process-arrow">→</div>
-            <div class="process-card">
-                <div class="process-circle" style="background: var(--light-teal);">02</div>
-                <h3>창의 융합 (Creativity)</h3>
-                <p>열린 배움터 안에서 혁신적인 생각과 미래 지향적 도구를 연결하는 확장 단계</p>
-            </div>
-            <div class="process-arrow">→</div>
-            <div class="process-card">
-                <div class="process-circle" style="background: var(--dark-text);">03</div>
-                <h3>최고 가치 도약 (Soaring)</h3>
-                <p>지식, 기술, 태도를 완벽히 조화시켜 지속 가능한 가치를 실현하는 도약 단계</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. IDENTITY SYSTEM -->
-    <section class="identity-section" id="identity">
-        <div class="section-header">
-            <h2>IDENTITY SYSTEM</h2>
-            <p>배움터지기 방패 마크와 정체성에 투영된 고유 상징 체계입니다.</p>
-        </div>
-        <div class="identity-container">
-            <div class="identity-visual">
-                <div class="visual-emblem">
-                    <h4>배움터지기</h4>
-                    <p>SHIELD SYSTEM</p>
-                </div>
-            </div>
-            <div class="identity-grid">
-                <div class="identity-item">
-                    <h4>청록색 바탕</h4>
-                    <p>정서적 안정과 치유 공간을 상징하며, 창의성 탐구 지향과 투명하고 청렴한 교육 공간 가치를 담습니다.</p>
-                </div>
-                <div class="identity-item">
-                    <h4>월계관</h4>
-                    <p>학문·덕행·인격에서 우수함을 추구하며 완전성과 끊임없는 성장과 발전을 의미합니다.</p>
-                </div>
-                <div class="identity-item">
-                    <h4>별 3개 (參)</h4>
-                    <p>지식·기술·태도를 균형 있게 갖추어 개개인의 탁월함을 향해 나아가는 체계적인 단계를 나타냅니다.</p>
-                </div>
-                <div class="identity-item">
-                    <h4>책과 리본</h4>
-                    <p>전통 위 열린 탐구, 학습과 연구 여정을 뜻하며 가치와 신념을 확고하게 담아내는 견고한 그릇입니다.</p>
-                </div>
-                <div class="identity-item" style="grid-column: span 2;">
-                    <h4>은색 방패 (Silver Shield)</h4>
-                    <p>순수·성실과 평화·화합을 기반으로 지혜롭고 통찰력 있는 학문 추구를 강조합니다. 동시에 안전하고 혁신적인 학습 공동체를 의미합니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. FOOTER -->
     <footer>
-        <div class="footer-top">
-            <div class="footer-info">
-                <h3>배움터지기</h3>
-                <p>학문을 수호하고, 균형을 지키며, 더 높은 가치를 향해 비상합니다.</p>
-                <!-- 대표자를 식별해야 하는 필수 영역에만 깔끔하게 기재합니다 -->
-                <p class="rep-info">대표자 : 유종경 (劉鍾景)</p> 
-            </div>
-            <div class="footer-links">
-                <a href="#home">Top</a>
-                <a href="#values">Values</a>
-                <a href="#process">Process</a>
-                <a href="#identity">Identity</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 BAEM-TEO JIGI. All Rights Reserved.</p>
-            <p style="font-size: 0.8rem; color: #4b5563;">KNOWLEDGE GUARDIAN SYSTEM</p>
-        </div>
+        <p><strong>유종경</strong> | PROTECTED VALUE SYSTEM</p>
+        <p style="margin-top:15px; opacity:0.7;">
+            yujongkyeong.github.io<br>
+            © 2026 Knowledge Guardian. All Rights Reserved.
+        </p>
     </footer>
 
+    <script>
+        // 간단한 스크롤 효과
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.opacity = '0.98';
+            }
+        });
+    </script>
 </body>
 </html>
