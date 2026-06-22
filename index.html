@@ -18,8 +18,8 @@
             --teal-light: #008080;
             --gold: #d4af37;
             --dark: #002f2f;
-            --paper: rgba(248, 249, 250, 0.82);
-            --card: rgba(255, 255, 255, 0.96);
+            --paper: rgba(248, 249, 250, 0.94);
+            --card: rgba(255, 255, 255, 0.97);
         }
 
         html {
@@ -87,7 +87,7 @@
             color: white;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.08rem;
+            font-size: 1.12rem;
             opacity: 0.95;
         }
 
@@ -106,19 +106,9 @@
             justify-content: center;
             text-align: center;
             color: white;
-            padding: 120px 20px 90px;
+            padding: 140px 20px 100px;
             position: relative;
             overflow: hidden;
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: url('배움터지기%20상표.jpg') center center no-repeat;
-            background-size: 2600px;
-            opacity: 0.12;
-            pointer-events: none;
         }
 
         header > div {
@@ -131,32 +121,32 @@
         }
 
         .logo {
-            width: min(1450px, 98vw);
-            max-width: 98vw;
-            border: 30px solid #C0C0C0;
-            border-radius: 56px;
-            box-shadow: 0 0 180px rgba(0, 128, 128, 0.96);
+            width: min(980px, 94vw);
+            max-width: 94vw;
+            border: 24px solid #C0C0C0;
+            border-radius: 46px;
+            box-shadow: 0 0 160px rgba(0, 128, 128, 0.92);
             margin-bottom: 34px;
             display: inline-block;
         }
 
         h1 {
             font-family: 'Noto Serif KR', serif;
-            font-size: clamp(3.8rem, 8.8vw, 6.9rem);
+            font-size: clamp(4rem, 8.8vw, 6.8rem);
             letter-spacing: 8px;
             margin-bottom: 30px;
             line-height: 1.12;
         }
 
         .hero-text {
-            font-size: clamp(1.7rem, 2.85vw, 2.35rem);
+            font-size: clamp(1.72rem, 2.9vw, 2.32rem);
             margin: 45px 0 30px;
             line-height: 1.82;
             font-weight: 400;
         }
 
         .hero-sub {
-            font-size: clamp(2.2rem, 3.3vw, 2.95rem);
+            font-size: clamp(2.18rem, 3.3vw, 2.95rem);
             font-weight: 800;
             color: var(--gold);
             line-height: 1.35;
@@ -168,16 +158,7 @@
             max-width: 1600px;
             margin: 0 auto;
             overflow: hidden;
-        }
-
-        section::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: url('배움터지기%20상표.jpg') center center no-repeat;
-            background-size: 2400px;
-            opacity: 0.085;
-            pointer-events: none;
+            background: var(--paper);
         }
 
         section > * {
@@ -197,32 +178,23 @@
 
         #identity {
             background:
-                linear-gradient(rgba(0, 47, 47, 0.91), rgba(0, 47, 47, 0.96)),
-                url('배움터지기%20상표.jpg') center/cover fixed;
+                linear-gradient(rgba(0, 47, 47, 0.92), rgba(0, 47, 47, 0.97)),
+                linear-gradient(135deg, rgba(0, 102, 102, 0.12), rgba(255, 255, 255, 0.02));
             color: white;
             max-width: 100%;
-        }
-
-        #identity::before {
-            background: url('배움터지기%20상표.jpg') center center no-repeat;
-            background-size: 1700px;
-            opacity: 0.16;
         }
 
         .identity-content {
             position: relative;
             z-index: 2;
-            background:
-                linear-gradient(rgba(255, 255, 255, 0.975), rgba(255, 255, 255, 0.975)),
-                url('배움터지기%20상표.jpg') center center no-repeat;
-            background-size: 980px;
+            background: linear-gradient(rgba(255, 255, 255, 0.975), rgba(255, 255, 255, 0.975));
             color: #222;
-            padding: 110px 72px;
+            padding: 108px 72px;
             border-radius: 34px;
             border: 3px solid rgba(192, 192, 192, 0.62);
             box-shadow:
                 0 34px 110px rgba(0, 0, 0, 0.34),
-                inset 0 0 70px rgba(0, 128, 128, 0.12);
+                inset 0 0 70px rgba(0, 128, 128, 0.10);
             max-width: 1360px;
             margin: 0 auto;
             text-align: center;
@@ -237,12 +209,12 @@
         }
 
         .identity-content p {
-            font-size: 1.62rem;
+            font-size: 1.64rem;
             text-align: center;
         }
 
         .identity-lead {
-            font-size: 1.68rem;
+            font-size: 1.7rem;
             text-align: center;
             margin-bottom: 74px;
             line-height: 1.88;
@@ -259,12 +231,12 @@
 
         .identity-bottom {
             text-align: center;
-            font-size: 1.9rem;
+            font-size: 1.92rem;
             line-height: 1.72;
         }
 
         #history {
-            background: rgba(232, 244, 244, 0.74);
+            background: rgba(232, 244, 244, 0.92);
         }
 
         .history-card {
@@ -295,11 +267,11 @@
         }
 
         #activity {
-            background: rgba(248, 249, 250, 0.70);
+            background: rgba(248, 249, 250, 0.94);
         }
 
         .carousel-frame {
-            max-width: 1360px;
+            max-width: 1260px;
             margin: 0 auto;
         }
 
@@ -366,7 +338,7 @@
         }
 
         #links {
-            background: rgba(248, 249, 250, 0.70);
+            background: rgba(248, 249, 250, 0.94);
         }
 
         .links-grid {
@@ -404,7 +376,7 @@
         }
 
         #inquiry {
-            background: rgba(232, 244, 244, 0.74);
+            background: rgba(232, 244, 244, 0.92);
         }
 
         footer {
@@ -414,23 +386,6 @@
             padding: 100px 20px 70px;
             font-size: 1.15rem;
             line-height: 1.9;
-            position: relative;
-            overflow: hidden;
-        }
-
-        footer::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: url('배움터지기%20상표.jpg') center center no-repeat;
-            background-size: 2200px;
-            opacity: 0.085;
-            pointer-events: none;
-        }
-
-        footer > * {
-            position: relative;
-            z-index: 1;
         }
 
         @media (max-width: 1024px) {
@@ -467,9 +422,9 @@
             }
 
             .logo {
-                width: min(96vw, 1250px);
-                border-width: 18px;
-                border-radius: 34px;
+                width: min(90vw, 980px);
+                border-width: 16px;
+                border-radius: 32px;
             }
 
             h1 {
@@ -584,7 +539,7 @@
             <p class="hero-text">
                 전통(傳統) 위에 세운 순수(純粹)와 지혜(智慧)<br>
                 안정(安定)한 열린 배움터에서 창의(創意) 날개를 달아<br>
-                최고 가치(價値)를 향해 도약(跳躍)합니다.
+                최고 가치(價值)를 향해 도약(跳躍)합니다.
             </p>
             <p class="hero-sub">수호(守護) · 균형(均衡) · 비상(飛翔)</p>
         </div>
@@ -691,7 +646,38 @@
         for (let i = 1; i <= slideCount; i++) {
             const div = document.createElement('div');
             div.className = 'carousel-item';
-            div.innerHTML = `<img src="활동${i}.jpg" alt="배움터지기 활동 ${i}">`;
+
+            const img = document.createElement('img');
+            img.src = `활동${i}.jpg`;
+            img.alt = `배움터지기 활동 ${i}`;
+            img.loading = 'eager';
+            img.decoding = 'async';
+
+            img.addEventListener('load', () => {
+                if (i - 1 === current) {
+                    requestAnimationFrame(updateCarouselHeight);
+                }
+            });
+
+            img.addEventListener('error', () => {
+                div.innerHTML = `
+                    <div style="
+                        width:100%;
+                        padding:72px 24px;
+                        text-align:center;
+                        font-size:1.5rem;
+                        color:#555;
+                        background:#f8f9fa;
+                    ">
+                        활동 ${i} 이미지를 불러오지 못했습니다.
+                    </div>
+                `;
+                if (i - 1 === current) {
+                    requestAnimationFrame(updateCarouselHeight);
+                }
+            });
+
+            div.appendChild(img);
             inner.appendChild(div);
         }
 
@@ -703,16 +689,22 @@
             if (!currentItem) return;
 
             const img = currentItem.querySelector('img');
-            if (!img) return;
+            if (!img) {
+                const fallback = currentItem.querySelector('div');
+                if (fallback) {
+                    carousel.style.height = `${fallback.getBoundingClientRect().height}px`;
+                }
+                return;
+            }
 
             const applyHeight = () => {
-                const height = img.getBoundingClientRect().height;
-                if (height > 0) {
-                    carousel.style.height = `${Math.ceil(height)}px`;
+                const rect = img.getBoundingClientRect();
+                if (rect.height > 0) {
+                    carousel.style.height = `${Math.ceil(rect.height)}px`;
                 }
             };
 
-            if (img.complete) {
+            if (img.complete && img.naturalWidth > 0) {
                 requestAnimationFrame(applyHeight);
             } else {
                 img.addEventListener('load', applyHeight, { once: true });
