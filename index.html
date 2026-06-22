@@ -14,11 +14,12 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 
         :root {
-            --teal: #006666;
-            --teal-light: #008080;
+            --teal: #5f8f8a;
+            --teal-dark: #245c58;
             --gold: #d4af37;
-            --dark: #002f2f;
-            --paper: rgba(248, 249, 250, 0.94);
+            --dark: #223331;
+            --paper: #f7f7f4;
+            --paper-2: #f3f4f0;
             --card: rgba(255, 255, 255, 0.97);
         }
 
@@ -35,96 +36,103 @@
         body {
             font-family: 'Noto Sans KR', sans-serif;
             font-size: 19px;
-            background:
-                linear-gradient(rgba(248, 249, 250, 0.90), rgba(248, 249, 250, 0.90)),
-                url('배움터지기%20상표.jpg') center center fixed;
-            background-size: 2400px;
-            background-repeat: no-repeat;
-            color: #222;
             line-height: 2.05;
+            color: #222;
+            background:
+                linear-gradient(rgba(247, 247, 244, 0.92), rgba(247, 247, 244, 0.92)),
+                url('배움터지기%20상표.jpg') center center fixed;
+            background-size: 2300px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            min-height: 100vh;
         }
 
         a {
             color: inherit;
+            text-decoration: none;
+        }
+
+        #top {
+            scroll-margin-top: 140px;
         }
 
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 47, 47, 0.97);
             z-index: 1000;
-            padding: 20px 0;
+            background: rgba(0, 47, 47, 0.97);
             backdrop-filter: blur(8px);
+            padding: 22px 0;
         }
 
         .nav-container {
-            max-width: 1600px;
+            max-width: 1750px;
             margin: 0 auto;
+            padding: 0 30px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 0 24px;
-            color: white;
-            gap: 18px;
+            justify-content: space-between;
+            gap: 24px;
         }
 
         .nav-title {
+            font-size: clamp(2.2rem, 2.3vw, 3.1rem);
             font-weight: 900;
-            font-size: 1.95rem;
             letter-spacing: 0.5px;
+            color: #fff;
             white-space: nowrap;
+            line-height: 1;
         }
 
         .nav-links {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-end;
             gap: 18px;
         }
 
         .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.12rem;
-            opacity: 0.95;
+            color: #fff;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 1.35vw, 2.2rem);
+            line-height: 1;
+            white-space: nowrap;
+            opacity: 0.98;
         }
 
         .nav-links a:hover {
-            opacity: 1;
             text-decoration: underline;
         }
 
         header {
             min-height: 100vh;
-            background:
-                linear-gradient(rgba(0, 47, 47, 0.72), rgba(0, 47, 47, 0.86)),
-                url('https://picsum.photos/id/1015/1920/1080') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            padding: 140px 20px 100px;
+            padding: 160px 20px 100px;
             position: relative;
             overflow: hidden;
+            background:
+                linear-gradient(rgba(0, 47, 47, 0.72), rgba(0, 47, 47, 0.86)),
+                url('https://picsum.photos/id/1015/1920/1080') center/cover;
         }
 
         header > div {
             position: relative;
             z-index: 1;
-            max-width: 1600px;
+            max-width: 1700px;
             width: 100%;
             padding: 0 20px;
-            text-align: center;
         }
 
         .logo {
-            width: min(980px, 94vw);
-            max-width: 94vw;
-            border: 24px solid #C0C0C0;
-            border-radius: 46px;
+            width: min(720px, 88vw);
+            max-width: 88vw;
+            border: 22px solid #c0c0c0;
+            border-radius: 44px;
             box-shadow: 0 0 160px rgba(0, 128, 128, 0.92);
             margin-bottom: 34px;
             display: inline-block;
@@ -132,21 +140,20 @@
 
         h1 {
             font-family: 'Noto Serif KR', serif;
-            font-size: clamp(4rem, 8.8vw, 6.8rem);
+            font-size: clamp(4.0rem, 8.2vw, 6.7rem);
             letter-spacing: 8px;
-            margin-bottom: 30px;
             line-height: 1.12;
+            margin-bottom: 30px;
         }
 
         .hero-text {
-            font-size: clamp(1.72rem, 2.9vw, 2.32rem);
-            margin: 45px 0 30px;
+            font-size: clamp(1.7rem, 2.8vw, 2.3rem);
             line-height: 1.82;
-            font-weight: 400;
+            margin: 45px 0 30px;
         }
 
         .hero-sub {
-            font-size: clamp(2.18rem, 3.3vw, 2.95rem);
+            font-size: clamp(2.1rem, 3vw, 2.75rem);
             font-weight: 800;
             color: var(--gold);
             line-height: 1.35;
@@ -154,21 +161,39 @@
 
         section {
             position: relative;
-            padding: 165px 20px;
-            max-width: 1600px;
+            max-width: 1700px;
             margin: 0 auto;
+            padding: 165px 20px;
             overflow: hidden;
+            scroll-margin-top: 140px;
+        }
+
+        #identity {
+            max-width: 100%;
+            background:
+                linear-gradient(rgba(0, 47, 47, 0.92), rgba(0, 47, 47, 0.97));
+            color: white;
+        }
+
+        #history {
+            background: var(--paper-2);
+        }
+
+        #activity {
             background: var(--paper);
         }
 
-        section > * {
-            position: relative;
-            z-index: 1;
+        #links {
+            background: #f6f7f4;
+        }
+
+        #inquiry {
+            background: var(--paper-2);
         }
 
         .section-title {
             text-align: center;
-            font-size: clamp(3.2rem, 6.8vw, 5.1rem);
+            font-size: clamp(3.2rem, 6.5vw, 5.2rem);
             margin-bottom: 92px;
             color: var(--teal);
             font-weight: 900;
@@ -176,102 +201,87 @@
             line-height: 1.12;
         }
 
-        #identity {
-            background:
-                linear-gradient(rgba(0, 47, 47, 0.92), rgba(0, 47, 47, 0.97)),
-                linear-gradient(135deg, rgba(0, 102, 102, 0.12), rgba(255, 255, 255, 0.02));
+        #identity .section-title {
             color: white;
-            max-width: 100%;
         }
 
         .identity-content {
-            position: relative;
-            z-index: 2;
-            background: linear-gradient(rgba(255, 255, 255, 0.975), rgba(255, 255, 255, 0.975));
-            color: #222;
-            padding: 108px 72px;
+            max-width: 1420px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.975);
             border-radius: 34px;
             border: 3px solid rgba(192, 192, 192, 0.62);
             box-shadow:
-                0 34px 110px rgba(0, 0, 0, 0.34),
-                inset 0 0 70px rgba(0, 128, 128, 0.10);
-            max-width: 1360px;
-            margin: 0 auto;
+                0 34px 110px rgba(0, 0, 0, 0.30),
+                inset 0 0 70px rgba(95, 143, 138, 0.10);
+            padding: 110px 72px;
+            color: #222;
             text-align: center;
         }
 
         .identity-content h3 {
-            color: var(--teal);
-            margin: 60px 0 20px;
-            font-size: 2.35rem;
+            color: var(--teal-dark);
+            font-size: 2.4rem;
             line-height: 1.22;
+            margin: 60px 0 20px;
             text-align: center;
         }
 
         .identity-content p {
-            font-size: 1.64rem;
+            font-size: 1.7rem;
             text-align: center;
         }
 
         .identity-lead {
-            font-size: 1.7rem;
-            text-align: center;
+            font-size: 1.74rem;
+            line-height: 1.9;
             margin-bottom: 74px;
-            line-height: 1.88;
         }
 
         .identity-tagline {
-            text-align: center;
-            margin: 96px 0 38px;
-            color: var(--teal);
             font-size: 3.1rem;
             line-height: 1.15;
             font-weight: 900;
+            color: var(--teal-dark);
+            margin: 98px 0 38px;
+            text-align: center;
         }
 
         .identity-bottom {
-            text-align: center;
-            font-size: 1.92rem;
+            font-size: 1.95rem;
             line-height: 1.72;
-        }
-
-        #history {
-            background: rgba(232, 244, 244, 0.92);
+            text-align: center;
         }
 
         .history-card {
-            text-align: center;
-            background: var(--card);
-            padding: 100px 56px;
-            border-radius: 32px;
-            max-width: 980px;
+            max-width: 1020px;
             margin: 0 auto;
+            background: var(--card);
+            border-radius: 32px;
+            padding: 100px 56px;
+            text-align: center;
+            border: 1px solid rgba(95, 143, 138, 0.08);
             box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
-            border: 1px solid rgba(0, 102, 102, 0.08);
         }
 
         .history-card h3 {
-            color: var(--teal);
+            color: var(--teal-dark);
             font-size: 2.15rem;
             line-height: 1.3;
         }
 
         .history-card h2 {
-            font-size: clamp(2.7rem, 4.5vw, 4rem);
+            font-size: clamp(2.8rem, 4.5vw, 4.1rem);
             margin: 30px 0 20px;
             line-height: 1.2;
         }
 
         .history-card p {
-            font-size: 1.55rem;
-        }
-
-        #activity {
-            background: rgba(248, 249, 250, 0.94);
+            font-size: 1.58rem;
         }
 
         .carousel-frame {
-            max-width: 1260px;
+            max-width: 1320px;
             margin: 0 auto;
         }
 
@@ -280,8 +290,8 @@
             width: 100%;
             overflow: hidden;
             border-radius: 30px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
             background: transparent;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
             transition: height 0.35s ease;
         }
 
@@ -296,8 +306,8 @@
             min-width: 100%;
             flex: 0 0 100%;
             display: flex;
-            justify-content: center;
             align-items: flex-start;
+            justify-content: center;
             background: transparent;
         }
 
@@ -313,20 +323,20 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 102, 102, 0.82);
-            color: white;
-            border: none;
             width: 82px;
             height: 82px;
+            border: none;
             border-radius: 50%;
-            font-size: 2.75rem;
-            z-index: 10;
             cursor: pointer;
+            z-index: 10;
+            color: white;
+            font-size: 2.75rem;
+            background: rgba(95, 143, 138, 0.82);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
         }
 
         .carousel button:hover {
-            background: rgba(0, 102, 102, 0.94);
+            background: rgba(95, 143, 138, 0.95);
         }
 
         .carousel .prev {
@@ -335,10 +345,6 @@
 
         .carousel .next {
             right: 18px;
-        }
-
-        #links {
-            background: rgba(248, 249, 250, 0.94);
         }
 
         .links-grid {
@@ -354,10 +360,9 @@
             border-radius: 24px;
             text-align: center;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
+            border: 1px solid rgba(95, 143, 138, 0.06);
             display: block;
-            border: 1px solid rgba(0, 102, 102, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .link-card:hover {
@@ -366,17 +371,13 @@
         }
 
         .link-card h3 {
-            font-size: 1.88rem;
+            font-size: 1.9rem;
             line-height: 1.35;
         }
 
         .link-card p {
             font-size: 1.2rem;
             margin-top: 10px;
-        }
-
-        #inquiry {
-            background: rgba(232, 244, 244, 0.92);
         }
 
         footer {
@@ -388,13 +389,15 @@
             line-height: 1.9;
         }
 
-        @media (max-width: 1024px) {
-            .identity-content {
-                padding: 84px 30px;
+        @media (max-width: 1100px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 14px;
             }
 
-            .hero-text {
-                line-height: 1.75;
+            .nav-links {
+                justify-content: center;
             }
         }
 
@@ -403,26 +406,12 @@
                 padding: 16px 0;
             }
 
-            .nav-container {
-                padding: 0 16px;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-title {
-                font-size: 1.55rem;
-            }
-
-            .nav-links {
-                gap: 12px;
-            }
-
             section {
                 padding: 105px 15px;
             }
 
             .logo {
-                width: min(90vw, 980px);
+                width: min(84vw, 720px);
                 border-width: 16px;
                 border-radius: 32px;
             }
@@ -436,7 +425,7 @@
             }
 
             .identity-content {
-                padding: 68px 20px;
+                padding: 68px 22px;
             }
 
             .identity-content p,
@@ -445,7 +434,7 @@
             }
 
             .identity-content h3 {
-                font-size: 1.8rem;
+                font-size: 1.82rem;
             }
 
             .identity-lead {
@@ -453,11 +442,11 @@
             }
 
             .identity-bottom {
-                font-size: 1.38rem;
+                font-size: 1.4rem;
             }
 
             .history-card {
-                padding: 74px 20px;
+                padding: 74px 22px;
             }
 
             .carousel button {
@@ -481,6 +470,14 @@
             .link-card {
                 padding: 42px 24px;
             }
+
+            .nav-title {
+                font-size: 1.65rem;
+            }
+
+            .nav-links a {
+                font-size: 1.15rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -489,39 +486,39 @@
             }
 
             .nav-title {
-                font-size: 1.35rem;
+                font-size: 1.45rem;
             }
 
             .nav-links a {
-                font-size: 0.98rem;
+                font-size: 1rem;
             }
 
             .hero-text {
-                font-size: 1.22rem;
+                font-size: 1.2rem;
             }
 
             .hero-sub {
-                font-size: 1.5rem;
+                font-size: 1.48rem;
             }
 
             .section-title {
-                font-size: 2.4rem;
+                font-size: 2.45rem;
             }
 
             .identity-content h3 {
-                font-size: 1.58rem;
+                font-size: 1.6rem;
             }
 
             .link-card h3 {
-                font-size: 1.45rem;
+                font-size: 1.48rem;
             }
         }
     </style>
 </head>
-<body>
+<body id="top">
     <nav>
         <div class="nav-container">
-            <div class="nav-title">배움터지기</div>
+            <a href="#top" class="nav-title">배움터지기</a>
             <div class="nav-links">
                 <a href="#identity">정체성</a>
                 <a href="#history">연혁</a>
@@ -539,14 +536,14 @@
             <p class="hero-text">
                 전통(傳統) 위에 세운 순수(純粹)와 지혜(智慧)<br>
                 안정(安定)한 열린 배움터에서 창의(創意) 날개를 달아<br>
-                최고 가치(價值)를 향해 도약(跳躍)합니다.
+                최고 가치(價値)를 향해 도약(跳躍)합니다.
             </p>
             <p class="hero-sub">수호(守護) · 균형(均衡) · 비상(飛翔)</p>
         </div>
     </header>
 
     <section id="identity">
-        <h2 class="section-title" style="color:white;">IDENTITY SYSTEM</h2>
+        <h2 class="section-title">IDENTITY SYSTEM</h2>
         <div class="identity-content">
             <p class="identity-lead">
                 배움터지기 방패 마크는 전통(傳統)과 현대(現代) 조화(調和)를 바탕으로<br>
@@ -602,7 +599,7 @@
         <h2 class="section-title">연결하기</h2>
         <div class="links-grid">
             <a href="https://smartstore.naver.com/baeumteojigi" target="_blank" rel="noopener noreferrer" class="link-card">
-                <i class="fas fa-store" style="font-size:4.2rem; color:var(--teal); margin-bottom:24px;"></i>
+                <i class="fas fa-store" style="font-size:4.2rem; color:var(--teal-dark); margin-bottom:24px;"></i>
                 <h3>네이버 스마트스토어</h3>
             </a>
             <a href="https://www.youtube.com/@배움터지기" target="_blank" rel="noopener noreferrer" class="link-card">
@@ -625,7 +622,7 @@
                 <p>빠른 상담</p>
             </a>
             <a href="mailto:baeumteojigi@naver.com" class="link-card">
-                <i class="fas fa-envelope" style="font-size:4rem; color:var(--teal); margin-bottom:24px;"></i>
+                <i class="fas fa-envelope" style="font-size:4rem; color:var(--teal-dark); margin-bottom:24px;"></i>
                 <h3>이메일 문의</h3>
                 <p>baeumteojigi@naver.com</p>
             </a>
@@ -641,45 +638,24 @@
     <script>
         const inner = document.getElementById('carouselInner');
         const carousel = document.getElementById('carousel');
-        const slideCount = 11;
 
-        for (let i = 1; i <= slideCount; i++) {
+        // 활동5는 제외
+        const slideNumbers = [1, 2, 3, 4, 6, 7, 8, 9, 10, 11];
+        const slideCount = slideNumbers.length;
+
+        slideNumbers.forEach((num) => {
             const div = document.createElement('div');
             div.className = 'carousel-item';
 
             const img = document.createElement('img');
-            img.src = `활동${i}.jpg`;
-            img.alt = `배움터지기 활동 ${i}`;
+            img.src = `활동${num}.jpg`;
+            img.alt = `배움터지기 활동 ${num}`;
             img.loading = 'eager';
             img.decoding = 'async';
 
-            img.addEventListener('load', () => {
-                if (i - 1 === current) {
-                    requestAnimationFrame(updateCarouselHeight);
-                }
-            });
-
-            img.addEventListener('error', () => {
-                div.innerHTML = `
-                    <div style="
-                        width:100%;
-                        padding:72px 24px;
-                        text-align:center;
-                        font-size:1.5rem;
-                        color:#555;
-                        background:#f8f9fa;
-                    ">
-                        활동 ${i} 이미지를 불러오지 못했습니다.
-                    </div>
-                `;
-                if (i - 1 === current) {
-                    requestAnimationFrame(updateCarouselHeight);
-                }
-            });
-
             div.appendChild(img);
             inner.appendChild(div);
-        }
+        });
 
         let current = 0;
         let intervalId = null;
@@ -689,13 +665,7 @@
             if (!currentItem) return;
 
             const img = currentItem.querySelector('img');
-            if (!img) {
-                const fallback = currentItem.querySelector('div');
-                if (fallback) {
-                    carousel.style.height = `${fallback.getBoundingClientRect().height}px`;
-                }
-                return;
-            }
+            if (!img) return;
 
             const applyHeight = () => {
                 const rect = img.getBoundingClientRect();
@@ -708,6 +678,7 @@
                 requestAnimationFrame(applyHeight);
             } else {
                 img.addEventListener('load', applyHeight, { once: true });
+                img.addEventListener('error', applyHeight, { once: true });
             }
         }
 
