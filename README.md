@@ -1,1 +1,0 @@
-baemteojigi.github.io
