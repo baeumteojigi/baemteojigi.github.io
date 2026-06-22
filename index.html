@@ -20,7 +20,7 @@
             --teal-deep: #1f3a38;
             --gold: #d2ad56;
             --dark: #223331;
-            --card: rgba(255, 255, 255, 0.95);
+            --card: rgba(255, 255, 255, 0.96);
             --paper: #f7f7f4;
             --paper-2: #f2f4ef;
         }
@@ -44,7 +44,7 @@
             line-height: 2.02;
             color: #222;
             background:
-                linear-gradient(rgba(247, 247, 244, 0.90), rgba(247, 247, 244, 0.90)),
+                linear-gradient(rgba(247, 247, 244, 0.88), rgba(247, 247, 244, 0.88)),
                 url('배움터지기%20상표.jpg') center center fixed;
             background-size: 2300px;
             background-repeat: no-repeat;
@@ -207,6 +207,7 @@
             scroll-margin-top: 140px;
             border-radius: 36px;
             box-shadow: 0 18px 44px rgba(0,0,0,0.04);
+            background-clip: padding-box;
         }
 
         section::before {
@@ -217,7 +218,7 @@
             background-position: center center;
             background-repeat: no-repeat;
             background-size: contain;
-            opacity: 0.06;
+            opacity: 0;
             pointer-events: none;
             z-index: 0;
         }
@@ -234,44 +235,22 @@
             background:
                 linear-gradient(180deg, rgba(41, 74, 71, 0.94), rgba(32, 56, 52, 0.97)),
                 linear-gradient(135deg, rgba(95, 143, 138, 0.22), rgba(255, 255, 255, 0.02));
-            --logo-opacity: 0.16;
-        }
-
-        #identity::before {
-            opacity: 0.15;
-            background-size: contain;
         }
 
         #history {
-            background: linear-gradient(180deg, rgba(242, 244, 239, 0.93), rgba(236, 241, 236, 0.94));
-        }
-
-        #history::before {
-            opacity: 0.07;
+            background: linear-gradient(180deg, rgba(242, 244, 239, 0.80), rgba(236, 241, 236, 0.84));
         }
 
         #activity {
-            background: linear-gradient(180deg, rgba(247, 247, 244, 0.93), rgba(242, 244, 239, 0.94));
-        }
-
-        #activity::before {
-            opacity: 0.07;
+            background: linear-gradient(180deg, rgba(247, 247, 244, 0.80), rgba(242, 244, 239, 0.84));
         }
 
         #links {
-            background: linear-gradient(180deg, rgba(245, 247, 243, 0.93), rgba(239, 243, 240, 0.94));
-        }
-
-        #links::before {
-            opacity: 0.07;
+            background: linear-gradient(180deg, rgba(245, 247, 243, 0.80), rgba(239, 243, 240, 0.84));
         }
 
         #inquiry {
-            background: linear-gradient(180deg, rgba(243, 244, 240, 0.93), rgba(237, 240, 236, 0.94));
-        }
-
-        #inquiry::before {
-            opacity: 0.07;
+            background: linear-gradient(180deg, rgba(243, 244, 240, 0.80), rgba(237, 240, 236, 0.84));
         }
 
         .section-title {
@@ -296,21 +275,21 @@
             padding: 102px 72px;
             color: #222;
             text-align: center;
-            background: linear-gradient(180deg, rgba(255,255,255,0.985), rgba(251,251,249,0.982));
+            background: rgba(255, 255, 255, 0.78);
             border-radius: 34px;
             box-shadow:
                 0 28px 96px rgba(0,0,0,0.14),
                 inset 0 1px 0 rgba(255,255,255,0.88);
+            backdrop-filter: blur(6px);
         }
 
         .identity-content h3 {
             color: var(--teal-dark);
             font-family: 'Noto Serif KR', serif;
-            font-size: 3.0rem;
+            font-size: 3rem;
             line-height: 1.2;
             margin: 46px 0 16px;
             text-align: center;
-            text-shadow: 0 1px 0 rgba(255,255,255,0.55);
         }
 
         .identity-content p {
@@ -348,11 +327,12 @@
         .history-card {
             max-width: 1020px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.84);
             border-radius: 30px;
             padding: 92px 56px;
             text-align: center;
             box-shadow: 0 16px 44px rgba(0,0,0,0.10);
+            backdrop-filter: blur(5px);
         }
 
         .history-card h3 {
@@ -448,13 +428,14 @@
         }
 
         .link-card {
-            background: rgba(255, 255, 255, 0.97);
+            background: rgba(255, 255, 255, 0.88);
             padding: 52px 34px;
             border-radius: 24px;
             text-align: center;
             box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
             display: block;
             transition: transform 0.28s ease, box-shadow 0.28s ease;
+            backdrop-filter: blur(5px);
         }
 
         .link-card:hover {
@@ -484,13 +465,14 @@
 
         .kakao-card,
         .email-card {
-            background: rgba(255,255,255,0.97);
+            background: rgba(255,255,255,0.88);
             border-radius: 28px;
             box-shadow: 0 14px 38px rgba(0,0,0,0.08);
             padding: 34px 30px;
             display: flex;
             align-items: center;
             gap: 22px;
+            backdrop-filter: blur(5px);
         }
 
         .kakao-card {
@@ -513,13 +495,13 @@
         }
 
         .kakao-copy h3 {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-family: 'Noto Serif KR', serif;
             line-height: 1.2;
         }
 
         .kakao-copy p {
-            font-size: 1.12rem;
+            font-size: 1.28rem;
             font-family: 'Gowun Batang', serif;
             margin-top: 4px;
             color: #555;
@@ -561,7 +543,7 @@
 
         .email-input {
             flex: 1 1 360px;
-            font-size: 1.78rem;
+            font-size: 1.9rem;
             padding: 18px 14px;
             border-radius: 16px;
             border: none;
