@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://baeumteojigi.github.io//sitemap.xml
