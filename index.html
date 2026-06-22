@@ -1,253 +1,668 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="배움터지기 - PROTECTED VALUE SYSTEM">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="배움터지기 - PROTECTED VALUE SYSTEM" />
     <meta name="google-site-verification" content="Yx700oYZ4xlrnqY1" />
-    
+
     <title>배움터지기 | PROTECTED VALUE SYSTEM</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
-        
+
         :root {
             --teal: #006666;
             --teal-light: #008080;
             --gold: #d4af37;
             --dark: #002f2f;
+            --paper: rgba(248, 249, 250, 0.82);
+            --card: rgba(255, 255, 255, 0.94);
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Noto Sans KR', sans-serif; 
-            background: #f8f9fa; 
-            color: #222; 
-            line-height: 1.9; 
+
+        html {
+            scroll-behavior: smooth;
         }
-        
-        nav { 
-            position: fixed; top: 0; width: 100%; 
-            background: rgba(0,47,47,0.97); 
-            z-index: 1000; padding: 18px 0; 
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .nav-container { 
-            max-width: 1300px; margin: 0 auto; 
-            display: flex; justify-content: space-between; 
-            align-items: center; padding: 0 20px; color: white; 
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 18px;
+            background:
+                linear-gradient(rgba(248, 249, 250, 0.90), rgba(248, 249, 250, 0.90)),
+                url('배움터지기%20상표.jpg') center center fixed;
+            background-size: 980px;
+            background-repeat: no-repeat;
+            color: #222;
+            line-height: 2.0;
         }
-        
+
+        a {
+            color: inherit;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 47, 47, 0.97);
+            z-index: 1000;
+            padding: 20px 0;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+            color: white;
+            gap: 18px;
+        }
+
+        .nav-title {
+            font-weight: 900;
+            font-size: 1.85rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.08rem;
+            opacity: 0.95;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
         header {
             min-height: 100vh;
-            background: linear-gradient(rgba(0,47,47,0.75), rgba(0,47,47,0.85)), 
-                        url('https://picsum.photos/id/1015/1920/1080') center/cover;
-            display: flex; align-items: center; justify-content: center; 
-            text-align: center; color: white;
-        }
-        
-        .logo { 
-            width: 460px; 
-            max-width: 92vw;
-            border: 18px solid #C0C0C0; 
-            border-radius: 32px; 
-            box-shadow: 0 0 100px rgba(0,128,128,0.85); 
-            margin-bottom: 50px; 
-        }
-        
-        h1 { 
-            font-family: 'Noto Serif KR', serif; 
-            font-size: clamp(2.8rem, 8vw, 4.8rem); 
-            letter-spacing: 8px; 
-            margin-bottom: 30px; 
-        }
-        
-        section { padding: 130px 20px; max-width: 1300px; margin: 0 auto; }
-        .section-title { 
-            text-align: center; 
-            font-size: clamp(2.6rem, 6.5vw, 3.6rem); 
-            margin-bottom: 80px; 
-            color: var(--teal); 
-            font-weight: 900; 
-        }
-        
-        /* IDENTITY */
-        #identity {
-            background: linear-gradient(rgba(0,47,47,0.88), rgba(0,47,47,0.93)), 
-                        url('배움터지기%20상표.jpg') center/cover fixed;
+            background:
+                linear-gradient(rgba(0, 47, 47, 0.70), rgba(0, 47, 47, 0.84)),
+                url('https://picsum.photos/id/1015/1920/1080') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             color: white;
+            padding: 120px 20px 90px;
             position: relative;
+            overflow: hidden;
         }
-        .identity-content { 
-            position: relative; z-index: 2;
-            background: rgba(255,255,255,0.97); 
+
+        header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('배움터지기%20상표.jpg') center center no-repeat;
+            background-size: 820px;
+            opacity: 0.07;
+            pointer-events: none;
+        }
+
+        header > div {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            width: 100%;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .logo {
+            width: min(840px, 94vw);
+            max-width: 94vw;
+            border: 22px solid #C0C0C0;
+            border-radius: 38px;
+            box-shadow: 0 0 130px rgba(0, 128, 128, 0.90);
+            margin-bottom: 44px;
+            display: inline-block;
+        }
+
+        h1 {
+            font-family: 'Noto Serif KR', serif;
+            font-size: clamp(3.2rem, 8.2vw, 6rem);
+            letter-spacing: 8px;
+            margin-bottom: 30px;
+            line-height: 1.15;
+        }
+
+        .hero-text {
+            font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+            margin: 45px 0 30px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .hero-sub {
+            font-size: clamp(2rem, 3vw, 2.6rem);
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1.35;
+        }
+
+        section {
+            position: relative;
+            padding: 150px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('배움터지기%20상표.jpg') center center no-repeat;
+            background-size: 860px;
+            opacity: 0.055;
+            pointer-events: none;
+        }
+
+        section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(3rem, 6.5vw, 4.7rem);
+            margin-bottom: 86px;
+            color: var(--teal);
+            font-weight: 900;
+            letter-spacing: 1px;
+            line-height: 1.15;
+        }
+
+        #identity {
+            background:
+                linear-gradient(rgba(0, 47, 47, 0.88), rgba(0, 47, 47, 0.93)),
+                url('배움터지기%20상표.jpg') center/cover fixed;
+            color: white;
+            max-width: 100%;
+        }
+
+        #identity::before {
+            background: url('배움터지기%20상표.jpg') center center no-repeat;
+            background-size: 1150px;
+            opacity: 0.11;
+        }
+
+        .identity-content {
+            position: relative;
+            z-index: 2;
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
+                url('배움터지기%20상표.jpg') center center no-repeat;
+            background-size: 720px;
             color: #222;
-            padding: 80px 50px; 
-            border-radius: 24px; 
-            box-shadow: 0 20px 70px rgba(0,0,0,0.3); 
-            max-width: 1150px;
+            padding: 92px 58px;
+            border-radius: 28px;
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.30);
+            max-width: 1220px;
             margin: 0 auto;
         }
-        .identity-content h3 { 
-            color: var(--teal); 
-            margin: 55px 0 22px; 
-            font-size: 2rem; 
+
+        .identity-content h3 {
+            color: var(--teal);
+            margin: 58px 0 20px;
+            font-size: 2.2rem;
+            line-height: 1.25;
         }
-        .identity-content p { font-size: 1.35rem; }
-        
-        /* 활동 사진 - 화질 최우선 */
-        .carousel { 
-            position: relative; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            overflow: hidden; 
-            border-radius: 20px; 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2); 
+
+        .identity-content p {
+            font-size: 1.48rem;
         }
-        .carousel-inner { display: flex; transition: transform 0.8s ease-in-out; }
-        .carousel-item img { 
-            width: 100%; 
-            height: auto; 
-            min-height: 500px;
-            max-height: 780px;
-            object-fit: contain;     /* 화질 깨짐 방지 */
+
+        .identity-lead {
+            font-size: 1.55rem;
+            text-align: center;
+            margin-bottom: 68px;
+            line-height: 1.8;
+        }
+
+        .identity-tagline {
+            text-align: center;
+            margin: 88px 0 38px;
+            color: var(--teal);
+            font-size: 2.9rem;
+            line-height: 1.2;
+            font-weight: 900;
+        }
+
+        .identity-bottom {
+            text-align: center;
+            font-size: 1.7rem;
+            line-height: 1.7;
+        }
+
+        #history {
+            background: rgba(232, 244, 244, 0.74);
+        }
+
+        .history-card {
+            text-align: center;
+            background: var(--card);
+            padding: 92px 46px;
+            border-radius: 28px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        .history-card h3 {
+            color: var(--teal);
+            font-size: 2rem;
+            line-height: 1.3;
+        }
+
+        .history-card h2 {
+            font-size: clamp(2.4rem, 4vw, 3.6rem);
+            margin: 30px 0 20px;
+            line-height: 1.2;
+        }
+
+        .history-card p {
+            font-size: 1.45rem;
+        }
+
+        #activity {
+            background: rgba(248, 249, 250, 0.72);
+        }
+
+        .carousel-frame {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 28px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.20);
+            background: white;
+            transition: height 0.35s ease;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+            will-change: transform;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            flex: 0 0 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+        }
+
+        .carousel-item img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 78vh;
+            object-fit: contain;
             background: #f8f9fa;
         }
-        
+
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 102, 102, 0.78);
+            color: white;
+            border: none;
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            font-size: 2.6rem;
+            z-index: 10;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
+        }
+
+        .carousel button:hover {
+            background: rgba(0, 102, 102, 0.92);
+        }
+
+        .carousel .prev {
+            left: 18px;
+        }
+
+        .carousel .next {
+            right: 18px;
+        }
+
+        #links {
+            background: rgba(248, 249, 250, 0.70);
+        }
+
         .links-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 35px;
             margin-top: 60px;
         }
+
         .link-card {
-            background: white; 
-            padding: 50px 30px; 
-            border-radius: 20px; 
+            background: var(--card);
+            padding: 54px 32px;
+            border-radius: 22px;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1); 
-            transition: all 0.4s;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: block;
         }
-        
-        footer { 
-            background: var(--dark); 
-            color: #ddd; 
-            text-align: center; 
-            padding: 100px 20px 60px; 
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.15);
+        }
+
+        .link-card h3 {
+            font-size: 1.8rem;
+            line-height: 1.35;
+        }
+
+        .link-card p {
+            font-size: 1.15rem;
+            margin-top: 10px;
+        }
+
+        #inquiry {
+            background: rgba(232, 244, 244, 0.74);
+        }
+
+        footer {
+            background: var(--dark);
+            color: #ddd;
+            text-align: center;
+            padding: 100px 20px 70px;
+            font-size: 1.12rem;
+            line-height: 1.9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('배움터지기%20상표.jpg') center center no-repeat;
+            background-size: 760px;
+            opacity: 0.06;
+            pointer-events: none;
+        }
+
+        footer > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 1024px) {
+            .identity-content {
+                padding: 76px 34px;
+            }
+
+            .hero-text {
+                line-height: 1.75;
+            }
         }
 
         @media (max-width: 768px) {
-            section { padding: 90px 15px; }
-            .identity-content { padding: 60px 30px; }
+            nav {
+                padding: 16px 0;
+            }
+
+            .nav-container {
+                padding: 0 16px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-title {
+                font-size: 1.55rem;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            section {
+                padding: 100px 15px;
+            }
+
+            .logo {
+                width: min(92vw, 700px);
+                border-width: 16px;
+            }
+
+            h1 {
+                letter-spacing: 4px;
+            }
+
+            .section-title {
+                margin-bottom: 62px;
+            }
+
+            .identity-content {
+                padding: 62px 24px;
+            }
+
+            .identity-content p,
+            .history-card p {
+                font-size: 1.25rem;
+            }
+
+            .identity-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .identity-lead {
+                font-size: 1.28rem;
+            }
+
+            .identity-bottom {
+                font-size: 1.35rem;
+            }
+
+            .history-card {
+                padding: 70px 22px;
+            }
+
+            .carousel button {
+                width: 58px;
+                height: 58px;
+                font-size: 2rem;
+            }
+
+            .carousel .prev {
+                left: 10px;
+            }
+
+            .carousel .next {
+                right: 10px;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .link-card {
+                padding: 42px 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 17px;
+            }
+
+            .nav-title {
+                font-size: 1.35rem;
+            }
+
+            .nav-links a {
+                font-size: 0.98rem;
+            }
+
+            .hero-text {
+                font-size: 1.22rem;
+            }
+
+            .hero-sub {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2.35rem;
+            }
+
+            .identity-content h3 {
+                font-size: 1.58rem;
+            }
+
+            .link-card h3 {
+                font-size: 1.45rem;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <div style="font-weight:900; font-size:1.65rem;">배움터지기</div>
-            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:18px;">
-                <a href="#identity" style="color:white; text-decoration:none; font-weight:500;">정체성</a>
-                <a href="#history" style="color:white; text-decoration:none; font-weight:500;">연혁</a>
-                <a href="#activity" style="color:white; text-decoration:none; font-weight:500;">활동</a>
-                <a href="#links" style="color:white; text-decoration:none; font-weight:500;">연결</a>
-                <a href="#inquiry" style="color:white; text-decoration:none; font-weight:500;">문의</a>
+            <div class="nav-title">배움터지기</div>
+            <div class="nav-links">
+                <a href="#identity">정체성</a>
+                <a href="#history">연혁</a>
+                <a href="#activity">활동</a>
+                <a href="#links">연결</a>
+                <a href="#inquiry">문의</a>
             </div>
         </div>
     </nav>
 
     <header>
-        <div style="max-width:1250px; padding:0 20px; text-align:center;">
+        <div>
             <img src="배움터지기%20상표.jpg" alt="배움터지기" class="logo">
             <h1>PROTECTED VALUE SYSTEM</h1>
-            <p style="font-size:1.85rem; margin:45px 0 30px; line-height:1.7;">
+            <p class="hero-text">
                 전통(傳統) 위에 세운 순수(純粹)와 지혜(智慧)<br>
                 안정(安定)한 열린 배움터에서 창의(創意) 날개를 달아<br>
-                최고 가치(價值)를 향해 도약(跳躍)합니다.
+                최고 가치(價値)를 향해 도약(跳躍)합니다.
             </p>
-            <p style="font-size:2.2rem; font-weight:bold; color:var(--gold);">수호(守護) · 균형(均衡) · 비상(飛翔)</p>
+            <p class="hero-sub">수호(守護) · 균형(均衡) · 비상(飛翔)</p>
         </div>
     </header>
 
     <section id="identity">
         <h2 class="section-title" style="color:white;">IDENTITY SYSTEM</h2>
         <div class="identity-content">
-            <p style="font-size:1.38rem; text-align:center; margin-bottom:65px;">
+            <p class="identity-lead">
                 배움터지기 방패 마크는 전통(傳統)과 현대(現代) 조화(調和)를 바탕으로<br>
                 학문(學問)을 수호(守護)하고 인격(人格)과 윤리(倫理)를 지키는 상징(象徵) 체계(體系)입니다.
             </p>
-            
+
             <h3>청록색 바탕</h3>
             <p>정서 안정과 치유 공간을 상징하며, 창의성 탐구와 투명하고 청렴한 교육 가치를 담습니다.</p>
-            
+
             <h3>월계관</h3>
             <p>학문·덕행·인격에서 우수함을 추구하며 완전성과 끊임없는 성장을 의미합니다.</p>
-            
+
             <h3>별 3개</h3>
             <p>지식 · 기술 · 태도를 균형 있게 갖추어 개개인의 탁월함을 향해 나아가는 단계입니다.</p>
-            
+
             <h3>책</h3>
             <p>전통 위 열린 탐구와 학습·연구 여정을 상징하며 전통과 현대성의 조화를 나타냅니다.</p>
-            
+
             <h3>리본</h3>
             <p>견고한 기반을 상징하며, 지향하는 가치와 모토를 담는 그릇입니다.</p>
-            
+
             <h3>은색 방패</h3>
             <p>순수·성실과 평화·화합을 기반으로 지혜롭고 통찰력 있는 학문 추구를 강조합니다.</p>
-            
-            <h2 style="text-align:center; margin:85px 0 40px; color:var(--teal); font-size:2.6rem;">KNOWLEDGE GUARDIAN</h2>
-            <p style="text-align:center; font-size:1.6rem;">
+
+            <h2 class="identity-tagline">KNOWLEDGE GUARDIAN</h2>
+            <p class="identity-bottom">
                 학문을 수호하고, 균형을 지키며, 더 높은 가치를 향해 비상합니다.
             </p>
         </div>
     </section>
 
-    <section id="history" style="background:#e8f4f4;">
+    <section id="history">
         <h2 class="section-title">연혁</h2>
-        <div style="text-align:center; background:white; padding:80px 40px; border-radius:24px; max-width:800px; margin:0 auto; box-shadow:0 15px 45px rgba(0,0,0,0.12);">
-            <h3 style="color:var(--teal); font-size:1.8rem;">2025년 6월 17일</h3>
-            <h2 style="font-size:2.8rem; margin:30px 0 20px;">배움터지기 설립</h2>
-            <p style="font-size:1.35rem;">학문의 수호와 바른 인격 교육을 사명으로 새로운 배움의 터전을 열었습니다.</p>
+        <div class="history-card">
+            <h3>2025년 6월 17일</h3>
+            <h2>배움터지기 설립</h2>
+            <p>학문의 수호와 바른 인격 교육을 사명으로 새로운 배움의 터전을 열었습니다.</p>
         </div>
     </section>
 
     <section id="activity">
         <h2 class="section-title">주요 활동</h2>
-        <div class="carousel" id="carousel">
-            <div class="carousel-inner" id="carouselInner"></div>
-            <button onclick="prevSlide()" style="position:absolute; top:50%; left:20px; transform:translateY(-50%); background:rgba(0,102,102,0.75); color:white; border:none; width:70px; height:70px; border-radius:50%; font-size:2.4rem; z-index:10;">‹</button>
-            <button onclick="nextSlide()" style="position:absolute; top:50%; right:20px; transform:translateY(-50%); background:rgba(0,102,102,0.75); color:white; border:none; width:70px; height:70px; border-radius:50%; font-size:2.4rem; z-index:10;">›</button>
+        <div class="carousel-frame">
+            <div class="carousel" id="carousel">
+                <div class="carousel-inner" id="carouselInner"></div>
+                <button type="button" class="prev" onclick="prevSlide()" aria-label="이전 사진">‹</button>
+                <button type="button" class="next" onclick="nextSlide()" aria-label="다음 사진">›</button>
+            </div>
         </div>
     </section>
 
     <section id="links">
         <h2 class="section-title">연결하기</h2>
         <div class="links-grid">
-            <a href="https://smartstore.naver.com/baeumteojigi" target="_blank" class="link-card">
-                <i class="fas fa-store" style="font-size:3.8rem; color:var(--teal); margin-bottom:25px;"></i>
+            <a href="https://smartstore.naver.com/baeumteojigi" target="_blank" rel="noopener noreferrer" class="link-card">
+                <i class="fas fa-store" style="font-size:4.2rem; color:var(--teal); margin-bottom:24px;"></i>
                 <h3>네이버 스마트스토어</h3>
             </a>
-            <a href="https://www.youtube.com/@배움터지기" target="_blank" class="link-card">
-                <i class="fab fa-youtube" style="font-size:3.8rem; color:#ff0000; margin-bottom:25px;"></i>
+            <a href="https://www.youtube.com/@배움터지기" target="_blank" rel="noopener noreferrer" class="link-card">
+                <i class="fab fa-youtube" style="font-size:4.2rem; color:#ff0000; margin-bottom:24px;"></i>
                 <h3>YouTube</h3>
             </a>
-            <a href="https://www.instagram.com/baeumteojigi" target="_blank" class="link-card">
-                <i class="fab fa-instagram" style="font-size:3.8rem; color:#E1306C; margin-bottom:25px;"></i>
+            <a href="https://www.instagram.com/baeumteojigi" target="_blank" rel="noopener noreferrer" class="link-card">
+                <i class="fab fa-instagram" style="font-size:4.2rem; color:#E1306C; margin-bottom:24px;"></i>
                 <h3>Instagram</h3>
             </a>
         </div>
     </section>
 
-    <section id="inquiry" style="background:#e8f4f4;">
+    <section id="inquiry">
         <h2 class="section-title">문의하기</h2>
         <div class="links-grid">
-            <a href="https://pf.kakao.com/_HdLZX" target="_blank" class="link-card">
-                <i class="fas fa-comment-dots" style="font-size:3.6rem; color:#FFCD00; margin-bottom:25px;"></i>
+            <a href="https://pf.kakao.com/_HdLZX" target="_blank" rel="noopener noreferrer" class="link-card">
+                <i class="fas fa-comment-dots" style="font-size:4rem; color:#FFCD00; margin-bottom:24px;"></i>
                 <h3>카카오톡 채널</h3>
                 <p>빠른 상담</p>
             </a>
             <a href="mailto:baeumteojigi@naver.com" class="link-card">
-                <i class="fas fa-envelope" style="font-size:3.6rem; color:var(--teal); margin-bottom:25px;"></i>
+                <i class="fas fa-envelope" style="font-size:4rem; color:var(--teal); margin-bottom:24px;"></i>
                 <h3>이메일 문의</h3>
                 <p>baeumteojigi@naver.com</p>
             </a>
@@ -262,20 +677,68 @@
 
     <script>
         const inner = document.getElementById('carouselInner');
-        for(let i = 1; i <= 11; i++) {
+        const carousel = document.getElementById('carousel');
+        const slideCount = 11;
+
+        for (let i = 1; i <= slideCount; i++) {
             const div = document.createElement('div');
             div.className = 'carousel-item';
             div.innerHTML = `<img src="활동${i}.jpg" alt="배움터지기 활동 ${i}">`;
             inner.appendChild(div);
         }
-        
+
         let current = 0;
-        const total = 11;
-        function showSlide() { inner.style.transform = `translateX(-${current * 100}%)`; }
-        function nextSlide() { current = (current + 1) % total; showSlide(); }
-        function prevSlide() { current = (current - 1 + total) % total; showSlide(); }
-        
-        setInterval(nextSlide, 5000);
+        let intervalId = null;
+
+        function updateCarouselHeight() {
+            const currentItem = inner.children[current];
+            if (!currentItem) return;
+
+            const img = currentItem.querySelector('img');
+            if (!img) return;
+
+            const applyHeight = () => {
+                const height = img.getBoundingClientRect().height;
+                if (height > 0) {
+                    carousel.style.height = `${Math.ceil(height)}px`;
+                }
+            };
+
+            if (img.complete) {
+                requestAnimationFrame(applyHeight);
+            } else {
+                img.addEventListener('load', applyHeight, { once: true });
+            }
+        }
+
+        function showSlide() {
+            inner.style.transform = `translateX(-${current * 100}%)`;
+            updateCarouselHeight();
+        }
+
+        function nextSlide() {
+            current = (current + 1) % slideCount;
+            showSlide();
+            resetInterval();
+        }
+
+        function prevSlide() {
+            current = (current - 1 + slideCount) % slideCount;
+            showSlide();
+            resetInterval();
+        }
+
+        function resetInterval() {
+            if (intervalId) clearInterval(intervalId);
+            intervalId = setInterval(nextSlide, 5000);
+        }
+
+        window.addEventListener('resize', updateCarouselHeight);
+
+        window.addEventListener('load', () => {
+            showSlide();
+            resetInterval();
+        });
     </script>
 </body>
 </html>
