@@ -4,127 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="배움터지기 - PROTECTED VALUE SYSTEM | 학문을 수호하고 인격과 윤리를 지키는 교육 공동체">
-    <meta name="keywords" content="배움터지기, 유종경, Knowledge Guardian, 인격교육, 학문수호">
-    
-    <!-- Google Search Console 소유권 확인 -->
     <meta name="google-site-verification" content="Yx700oYZ4xlrnqY1" />
     
     <title>배움터지기 | PROTECTED VALUE SYSTEM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
         
-        :root { --teal: #008080; --silver: #C0C0C0; --dark: #001f1f; }
+        :root { --teal: #006666; --silver: #C0C0C0; --dark: #001f1f; }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans KR', sans-serif; background: #f8f9fa; color: #222; line-height: 1.8; }
+        body { 
+            font-family: 'Noto Sans KR', sans-serif; 
+            background: #f8f9fa; 
+            color: #222; 
+            line-height: 1.8; 
+        }
         
-        nav { position: fixed; top: 0; width: 100%; background: rgba(0,31,31,0.97); z-index: 1000; padding: 15px 0; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; color: white; }
+        nav { 
+            position: fixed; top: 0; width: 100%; 
+            background: rgba(0,31,31,0.98); 
+            z-index: 1000; padding: 18px 0; 
+        }
+        .nav-container { 
+            max-width: 1280px; margin: 0 auto; 
+            display: flex; justify-content: space-between; 
+            align-items: center; padding: 0 40px; color: white; 
+        }
         
         header {
             height: 100vh;
-            background: linear-gradient(rgba(0,31,31,0.85), rgba(0,31,31,0.9)), url('https://picsum.photos/id/1015/1920/1080') center/cover;
-            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+            background: linear-gradient(rgba(0,31,31,0.82), rgba(0,31,31,0.88)), 
+                        url('https://picsum.photos/id/1015/1920/1080') center/cover;
+            display: flex; align-items: center; justify-content: center; 
+            text-align: center; color: white;
         }
         
-        .logo { width: 280px; border: 12px solid var(--silver); border-radius: 20px; box-shadow: 0 0 70px rgba(0,128,128,0.7); margin-bottom: 30px; }
-        h1 { font-family: 'Noto Serif KR', serif; font-size: 3.5rem; letter-spacing: 4px; }
+        .logo { 
+            width: 320px; 
+            border: 14px solid var(--silver); 
+            border-radius: 24px; 
+            box-shadow: 0 0 80px rgba(0,128,128,0.7); 
+            margin-bottom: 40px; 
+        }
         
-        section { padding: 120px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 60px; color: var(--teal); }
+        h1 { 
+            font-family: 'Noto Serif KR', serif; 
+            font-size: 3.8rem; 
+            letter-spacing: 6px; 
+            margin-bottom: 24px; 
+        }
         
-        .identity-content { background: white; padding: 60px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); line-height: 2.0; }
-        .identity-content h3 { color: var(--teal); margin: 35px 0 15px; font-size: 1.6rem; }
+        section { padding: 130px 20px; max-width: 1280px; margin: 0 auto; }
+        .section-title { 
+            text-align: center; 
+            font-size: 3rem; 
+            margin-bottom: 70px; 
+            color: var(--teal); 
+            font-weight: 700; 
+        }
         
-        .carousel { position: relative; max-width: 1100px; margin: 40px auto; overflow: hidden; border-radius: 16px; }
-        .carousel-inner { display: flex; transition: transform 0.6s ease; }
-        .carousel-item img { width: 100%; height: 620px; object-fit: cover; }
-        .carousel-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; padding: 40px 30px 30px; }
+        .identity-content { 
+            background: white; 
+            padding: 70px; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1); 
+            line-height: 2.1; 
+            font-size: 1.1rem; 
+        }
+        .identity-content h3 { 
+            color: var(--teal); 
+            margin: 45px 0 18px; 
+            font-size: 1.65rem; 
+        }
         
-        .links-grid {
+        /* 캐러셀 개선 */
+        .carousel { 
+            position: relative; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            overflow: hidden; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15); 
+        }
+        .carousel-inner { 
+            display: flex; 
+            transition: transform 0.7s ease-in-out; 
+        }
+        .carousel-item { 
+            min-width: 100%; 
+            position: relative; 
+        }
+        .carousel-item img { 
+            width: 100%; 
+            height: 680px; 
+            object-fit: cover; 
+        }
+        
+        .links-grid, .inquiry-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
         .link-card {
-            background: white; padding: 40px; border-radius: 16px; text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: 0.3s;
+            background: white; 
+            padding: 45px 30px; 
+            border-radius: 18px; 
+            text-align: center;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08); 
+            transition: all 0.4s;
         }
-        .link-card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,128,128,0.15); }
+        .link-card:hover { 
+            transform: translateY(-15px); 
+            box-shadow: 0 25px 50px rgba(0,128,128,0.2); 
+        }
         
-        footer { background: var(--dark); color: #ddd; text-align: center; padding: 80px 20px 40px; }
+        footer { 
+            background: var(--dark); 
+            color: #ddd; 
+            text-align: center; 
+            padding: 90px 20px 50px; 
+        }
     </style>
 </head>
 <body>
-    <!-- 나머지 내용은 이전과 동일하게 유지 -->
     <nav>
         <div class="nav-container">
-            <div style="font-weight:bold; font-size:1.5rem;">배움터지기</div>
+            <div style="font-weight:900; font-size:1.6rem;">배움터지기</div>
             <div>
-                <a href="#identity" style="color:white; margin:0 20px; text-decoration:none;">정체성</a>
-                <a href="#history" style="color:white; margin:0 20px; text-decoration:none;">연혁</a>
-                <a href="#activity" style="color:white; margin:0 20px; text-decoration:none;">활동</a>
-                <a href="#links" style="color:white; margin:0 20px; text-decoration:none;">연결</a>
+                <a href="#identity" style="color:white; margin:0 22px; text-decoration:none; font-weight:500;">정체성</a>
+                <a href="#history" style="color:white; margin:0 22px; text-decoration:none; font-weight:500;">연혁</a>
+                <a href="#activity" style="color:white; margin:0 22px; text-decoration:none; font-weight:500;">활동</a>
+                <a href="#links" style="color:white; margin:0 22px; text-decoration:none; font-weight:500;">연결</a>
+                <a href="#inquiry" style="color:white; margin:0 22px; text-decoration:none; font-weight:500;">문의</a>
             </div>
         </div>
     </nav>
 
     <header>
-        <div style="max-width:1000px; padding:0 20px;">
-            <img src="배움터지기%20상표.jpg" alt="배움터지기 로고" class="logo">
+        <div style="max-width:1100px; padding:0 20px;">
+            <img src="배움터지기%20상표.jpg" alt="배움터지기" class="logo">
             <h1>PROTECTED VALUE SYSTEM</h1>
-            <p style="font-size:1.55rem; margin:30px 0;">
+            <p style="font-size:1.65rem; margin:35px 0 20px; line-height:1.6;">
                 전통(傳統) 위에 세운 순수(純粹)와 지혜(智慧)<br>
                 안정(安定)한 열린 배움터에서 창의(創意) 날개를 달아<br>
                 최고 가치(價值)를 향해 도약(跳躍)합니다.
             </p>
-            <p style="font-size:1.8rem; font-weight:bold;">수호(守護) · 균형(均衡) · 비상(飛翔)</p>
+            <p style="font-size:2rem; font-weight:bold; letter-spacing:4px;">수호(守護) · 균형(均衡) · 비상(飛翔)</p>
         </div>
     </header>
 
     <section id="identity">
         <h2 class="section-title">IDENTITY SYSTEM</h2>
         <div class="identity-content">
-            <p style="font-size:1.25rem; text-align:center; margin-bottom:50px;">
+            <p style="font-size:1.28rem; text-align:center; margin-bottom:55px;">
                 배움터지기 방패 마크는 전통(傳統)과 현대(現代) 조화(調和)를 바탕으로<br>
                 학문(學問)을 수호(守護)하고 인격(人格)과 윤리(倫理)를 지키는 상징(象徵) 체계(體系)입니다.
             </p>
             
             <h3>청록색 바탕</h3>
-            <p>정서(情緒) 안정(安定)과 치유(治癒) 공간(空間)을 상징(象徵)하며, 창의성(創意性) 탐구(探究) 지향(志向)과 투명(透明)하고 청렴(淸廉)한 교육(教育) 공간 가치(價值)를 담습니다.</p>
+            <p>정서(情緒) 안정(安定)과 치유(治癒) 공간(空間)을 상징하며, 창의성(創意性) 탐구와 투명하고 청렴한 교육 가치(價値)를 담습니다.</p>
             
             <h3>월계관</h3>
-            <p>학문(學問)·덕행(德行)·인격(人格)에서 우수(優秀)함을 추구(追求)하며 완전(完全)성과 끊임없는 성장(成長)을 의미(意味)합니다.</p>
+            <p>학문·덕행·인격에서 우수함을 추구하며 완전성과 끊임없는 성장을 의미합니다.</p>
             
             <h3>별 3개</h3>
-            <p>지식(知識) · 기술(技術) · 태도(態度)를 균형(均衡) 있게 갖추어 개개인 탁월(卓越)함을 향해 나아가는 단계(段階)를 나타냅니다.</p>
+            <p>지식 · 기술 · 태도를 균형 있게 갖추어 개개인의 탁월함을 향해 나아가는 단계입니다.</p>
             
             <h3>책</h3>
-            <p>전통(傳統) 위 열린 탐구(探究), 학습(學習)과 연구(硏究) 여정(旅程)을 상징(象徵)하며 전통(傳統)과 현대성(現代性) 조화(調和)를 나타냅니다.</p>
+            <p>전통 위 열린 탐구와 학습·연구 여정을 상징하며 전통과 현대성의 조화를 나타냅니다.</p>
             
             <h3>리본</h3>
-            <p>견고(堅固)한 기반(基盤)을 상징(象徵)하며, 지향(志向)하는 가치(價值)와 모토를 담는 그릇입니다.</p>
+            <p>견고한 기반을 상징하며, 지향하는 가치와 모토를 담는 그릇입니다.</p>
             
             <h3>은색 방패</h3>
-            <p>순수(純粹)·성실(誠實)과 평화(平和)·화합(和合)을 기반(基盤)으로 지혜(智慧)롭고 통찰력(洞察力) 있는 학문(學問) 추구(追求)를 강조(強調)합니다. 동시에 안전(安全)하고 혁신(革新) 학습(學習) 공동체(共同體)를 의미(意味)합니다.</p>
+            <p>순수·성실과 평화·화합을 기반으로 지혜롭고 통찰력 있는 학문 추구를 강조합니다.</p>
             
-            <h2 style="text-align:center; margin-top:60px; color:var(--teal);">KNOWLEDGE GUARDIAN</h2>
-            <p style="text-align:center; font-size:1.4rem;">
-                학문(學問)을 수호(守護)하고, 균형(均衡)을 지키며,<br>
-                더 높은 가치(價值)를 향해 비상(飛翔)합니다.
+            <h2 style="text-align:center; margin:70px 0 30px; color:var(--teal); font-size:2.1rem;">KNOWLEDGE GUARDIAN</h2>
+            <p style="text-align:center; font-size:1.45rem;">
+                학문을 수호하고, 균형을 지키며, 더 높은 가치를 향해 비상합니다.
             </p>
         </div>
     </section>
 
     <section id="history" style="background:#f0f7f7;">
         <h2 class="section-title">연혁</h2>
-        <div style="text-align:center; background:white; padding:60px; border-radius:16px; max-width:700px; margin:0 auto; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
-            <h3 style="color:var(--teal);">2025년 6월 17일</h3>
-            <h2 style="font-size:2.4rem; margin:20px 0;">배움터지기 설립</h2>
-            <p>학문의 수호와 인격 교육을 사명으로 새로운 배움의 터전을 열었습니다.</p>
+        <div style="text-align:center; background:white; padding:70px; border-radius:20px; max-width:720px; margin:0 auto; box-shadow:0 15px 40px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--teal); font-size:1.6rem;">2025년 6월 17일</h3>
+            <h2 style="font-size:2.6rem; margin:25px 0;">배움터지기 설립</h2>
+            <p style="font-size:1.25rem;">학문의 수호와 바른 인격 교육을 사명으로 새로운 배움의 터전을 열었습니다.</p>
         </div>
     </section>
 
@@ -132,12 +202,9 @@
         <h2 class="section-title">주요 활동</h2>
         <div class="carousel" id="carousel">
             <div class="carousel-inner" id="carouselInner"></div>
-            <div style="position:absolute; top:50%; left:20px; transform:translateY(-50%); z-index:10;">
-                <button onclick="prevSlide()" style="background:rgba(0,0,0,0.5); color:white; border:none; width:50px; height:50px; border-radius:50%; font-size:1.8rem;">‹</button>
-            </div>
-            <div style="position:absolute; top:50%; right:20px; transform:translateY(-50%); z-index:10;">
-                <button onclick="nextSlide()" style="background:rgba(0,0,0,0.5); color:white; border:none; width:50px; height:50px; border-radius:50%; font-size:1.8rem;">›</button>
-            </div>
+            
+            <button onclick="prevSlide()" style="position:absolute; top:50%; left:20px; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; border:none; width:60px; height:60px; border-radius:50%; font-size:2rem; z-index:10;">‹</button>
+            <button onclick="nextSlide()" style="position:absolute; top:50%; right:20px; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; border:none; width:60px; height:60px; border-radius:50%; font-size:2rem; z-index:10;">›</button>
         </div>
     </section>
 
@@ -145,14 +212,32 @@
         <h2 class="section-title">연결하기</h2>
         <div class="links-grid">
             <a href="https://smartstore.naver.com/baeumteojigi" target="_blank" class="link-card">
-                <i class="fas fa-store" style="font-size:3.5rem; color:var(--teal);"></i>
+                <i class="fas fa-store" style="font-size:3.8rem; color:var(--teal); margin-bottom:20px;"></i>
                 <h3>네이버 스마트스토어</h3>
-                <p>공식 상품 및 자료</p>
             </a>
             <a href="https://www.youtube.com/@배움터지기" target="_blank" class="link-card">
-                <i class="fab fa-youtube" style="font-size:3.5rem; color:#ff0000;"></i>
-                <h3>YouTube 채널</h3>
-                <p>배움터지기 공식 영상</p>
+                <i class="fab fa-youtube" style="font-size:3.8rem; color:#ff0000; margin-bottom:20px;"></i>
+                <h3>YouTube</h3>
+            </a>
+            <a href="https://www.instagram.com/baeumteojigi" target="_blank" class="link-card">
+                <i class="fab fa-instagram" style="font-size:3.8rem; color:#E1306C; margin-bottom:20px;"></i>
+                <h3>Instagram</h3>
+            </a>
+        </div>
+    </section>
+
+    <section id="inquiry" style="background:#f8f9fa;">
+        <h2 class="section-title">문의하기</h2>
+        <div class="links-grid">
+            <a href="https://pf.kakao.com/_HdLZX" target="_blank" class="link-card">
+                <i class="fas fa-comment-dots" style="font-size:3.6rem; color:#FFCD00; margin-bottom:20px;"></i>
+                <h3>카카오톡 채널</h3>
+                <p>빠른 상담</p>
+            </a>
+            <a href="mailto:baeumteojigi@naver.com" class="link-card">
+                <i class="fas fa-envelope" style="font-size:3.6rem; color:var(--teal); margin-bottom:20px;"></i>
+                <h3>이메일 문의</h3>
+                <p>baeumteojigi@naver.com</p>
             </a>
         </div>
     </section>
@@ -160,7 +245,7 @@
     <footer>
         <p><strong>대표 : 유종경</strong></p>
         <p>배움터지기 | PROTECTED VALUE SYSTEM</p>
-        <p style="margin-top:20px;">© 2026 Knowledge Guardian. All Rights Reserved.</p>
+        <p style="margin-top:25px;">© 2026 Knowledge Guardian. All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -168,14 +253,20 @@
         for(let i = 1; i <= 11; i++) {
             const div = document.createElement('div');
             div.className = 'carousel-item';
-            div.innerHTML = `<img src="활동${i}.jpg" alt="활동 ${i}">`;
+            div.innerHTML = `<img src="활동${i}.jpg" alt="배움터지기 활동 ${i}">`;
             inner.appendChild(div);
         }
+        
         let current = 0;
-        function show() { inner.style.transform = `translateX(-${current * 100}%)`; }
-        function nextSlide() { current = (current + 1) % 11; show(); }
-        function prevSlide() { current = (current - 1 + 11) % 11; show(); }
-        setInterval(nextSlide, 6000);
+        const total = 11;
+        
+        function showSlide() {
+            inner.style.transform = `translateX(-${current * 100}%)`;
+        }
+        function nextSlide() { current = (current + 1) % total; showSlide(); }
+        function prevSlide() { current = (current - 1 + total) % total; showSlide(); }
+        
+        setInterval(nextSlide, 5500);
     </script>
 </body>
 </html>
