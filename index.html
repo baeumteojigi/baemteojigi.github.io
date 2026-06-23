@@ -1,3 +1,6 @@
+현재 페이지는 상단 제목과 다섯 섹션 구조가 보이는 상태라, 그 틀은 유지하고 정렬·줄바꿈·모바일 스크롤 동작만 다시 손봤습니다. ([baeumteojigi.github.io][1])
+
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -168,6 +171,9 @@
             max-width: 1700px;
             width: 100%;
             padding: 0 20px;
+            display: grid;
+            justify-items: center;
+            text-align: center;
         }
 
         .logo {
@@ -182,25 +188,29 @@
 
         h1 {
             font-family: 'Noto Serif KR', serif;
-            font-size: clamp(4.4rem, 8.8vw, 7.6rem);
-            letter-spacing: 8px;
+            font-size: clamp(3.5rem, 7vw, 6rem);
+            letter-spacing: 6px;
             line-height: 1.08;
             margin-bottom: 28px;
             white-space: nowrap;
             word-break: keep-all;
+            text-align: center;
+            width: 100%;
         }
 
         .hero-text {
             font-size: clamp(2.15rem, 3.2vw, 3.2rem);
             line-height: 1.58;
-            margin: 42px 0 26px;
+            margin: 42px auto 26px;
             font-family: 'Gowun Batang', serif;
             word-break: keep-all;
+            text-align: center;
+            max-width: 1100px;
         }
 
         .hero-line {
             display: block;
-            white-space: nowrap;
+            text-align: center;
         }
 
         .hero-sub {
@@ -210,6 +220,8 @@
             line-height: 1.25;
             letter-spacing: 0.3px;
             white-space: nowrap;
+            text-align: center;
+            width: 100%;
         }
 
         section {
@@ -300,8 +312,9 @@
         .identity-lead {
             font-size: clamp(2.45rem, 2.25vw, 3.5rem);
             line-height: 1.58;
-            margin-bottom: 62px;
+            margin: 0 auto 62px;
             color: #2a2a2a;
+            max-width: 1200px;
         }
 
         .identity-tagline {
@@ -319,6 +332,8 @@
             line-height: 1.58;
             text-align: center;
             color: #2d2d2d;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .history-card {
@@ -691,6 +706,10 @@
                 display: none;
             }
 
+            nav {
+                padding: 14px 0;
+            }
+
             .nav-title {
                 font-size: 1.4rem;
             }
@@ -701,6 +720,7 @@
 
             header {
                 padding: 138px 16px 84px;
+                background-attachment: scroll;
             }
 
             .logo {
@@ -708,25 +728,27 @@
             }
 
             h1 {
-                font-size: 2.45rem;
+                font-size: 1.45rem;
                 letter-spacing: 0px;
                 line-height: 1.05;
                 max-width: 100%;
-                padding: 0 4px;
+                padding: 0 2px;
             }
 
             .hero-text {
                 font-size: 0.98rem;
                 line-height: 1.6;
+                max-width: 100%;
             }
 
             .hero-line {
                 display: block;
-                white-space: nowrap;
+                white-space: normal;
             }
 
             .hero-sub {
-                font-size: 1.22rem;
+                font-size: 1.18rem;
+                white-space: nowrap;
             }
 
             .section-title {
@@ -749,6 +771,14 @@
 
             .email-address {
                 font-size: 1.05rem;
+            }
+
+            .identity-content,
+            .history-card,
+            .link-card,
+            .kakao-card,
+            .email-card {
+                backdrop-filter: none;
             }
         }
     </style>
@@ -774,7 +804,7 @@
             <p class="hero-text">
                 <span class="hero-line">전통(傳統) 위에 세운 순수(純粹)와 지혜(智慧)</span>
                 <span class="hero-line">안정(安定)한 열린 배움터에서 창의(創意) 날개를 달아</span>
-                <span class="hero-line">최고 가치(價值)를 향해 도약(跳躍)합니다.</span>
+                <span class="hero-line">최고 가치(價値)를 향해 도약(跳躍)합니다.</span>
             </p>
             <p class="hero-sub"><span class="hero-line">수호(守護) · 균형(均衡) · 비상(飛翔)</span></p>
         </div>
@@ -792,16 +822,16 @@
             <p>정서 안정과 치유 공간을 상징하며, 창의성 탐구와 투명하고 청렴한 교육 가치를 담습니다.</p>
 
             <h3>월계관</h3>
-            <p>학문·덕행·인격에서 우수함을 추구하며 완전성과 끊임없는 성장을 의미합니다.</p>
+            <p>학문·덕행·인격에서 우수함을 추구하며 완전성과 끊임없는 성장을 뜻합니다.</p>
 
             <h3>별 3개</h3>
-            <p>지식 · 기술 · 태도를 균형 있게 갖추어 개개인의 탁월함을 향해 나아가는 단계입니다.</p>
+            <p>지식 · 기술 · 태도를 균형 있게 갖추어 개개인 탁월함을 향해 나아가는 단계입니다.</p>
 
             <h3>책</h3>
-            <p>전통 위 열린 탐구와 학습·연구 여정을 상징하며 전통과 현대성의 조화를 나타냅니다.</p>
+            <p>전통 위 열린 탐구와 학습·연구 길을 상징하며 전통과 현대성 조화를 나타냅니다.</p>
 
             <h3>리본</h3>
-            <p>견고한 기반을 상징하며, 지향하는 가치와 모토를 담는 그릇입니다.</p>
+            <p>견고한 기반을 상징하며, 지향 가치와 모토를 담는 그릇입니다.</p>
 
             <h3>은색 방패</h3>
             <p>순수·성실과 평화·화합을 기반으로 지혜롭고 통찰력 있는 학문 추구를 강조합니다.</p>
@@ -818,7 +848,7 @@
         <div class="history-card">
             <h3>2025년 6월 17일</h3>
             <h2>배움터지기 설립</h2>
-            <p>학문의 수호와 바른 인격 교육을 사명으로 새로운 배움의 터전을 열었습니다.</p>
+            <p>학문 수호와 바른 인격 교육을 사명으로 새로운 배움터를 열었습니다.</p>
         </div>
     </section>
 
@@ -1016,3 +1046,6 @@
     </script>
 </body>
 </html>
+```
+
+[1]: https://baeumteojigi.github.io/ "배움터지기 | PROTECTED VALUE SYSTEM"
