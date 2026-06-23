@@ -186,23 +186,30 @@
             letter-spacing: 8px;
             line-height: 1.08;
             margin-bottom: 28px;
+            white-space: nowrap;
             word-break: keep-all;
         }
 
         .hero-text {
-            font-size: clamp(1.68rem, 2.8vw, 2.25rem);
-            line-height: 1.82;
+            font-size: clamp(2.15rem, 3.2vw, 3.2rem);
+            line-height: 1.58;
             margin: 42px 0 26px;
             font-family: 'Gowun Batang', serif;
             word-break: keep-all;
         }
 
+        .hero-line {
+            display: block;
+            white-space: nowrap;
+        }
+
         .hero-sub {
-            font-size: clamp(2.05rem, 3vw, 2.7rem);
+            font-size: clamp(2.35rem, 3.4vw, 3.1rem);
             font-weight: 800;
             color: var(--gold);
-            line-height: 1.35;
+            line-height: 1.25;
             letter-spacing: 0.3px;
+            white-space: nowrap;
         }
 
         section {
@@ -565,11 +572,20 @@
             }
 
             h1 {
-                font-size: 3rem;
-                letter-spacing: 2px;
-                line-height: 1.08;
+                font-size: 2.8rem;
+                letter-spacing: 1px;
+                line-height: 1.06;
                 word-break: keep-all;
                 padding: 0 6px;
+            }
+
+            .hero-text {
+                font-size: 1.12rem;
+                line-height: 1.68;
+            }
+
+            .hero-sub {
+                font-size: 1.34rem;
             }
 
             .section-title {
@@ -670,9 +686,9 @@
                 background-attachment: scroll;
             }
 
-            body::before {
-                transform: none !important;
-                opacity: 0.08;
+            body::before,
+            body::after {
+                display: none;
             }
 
             .nav-title {
@@ -692,19 +708,25 @@
             }
 
             h1 {
-                font-size: 2.55rem;
-                letter-spacing: 1px;
-                line-height: 1.06;
+                font-size: 2.45rem;
+                letter-spacing: 0px;
+                line-height: 1.05;
                 max-width: 100%;
-                padding: 0 6px;
+                padding: 0 4px;
             }
 
             .hero-text {
-                font-size: 1.15rem;
+                font-size: 0.98rem;
+                line-height: 1.6;
+            }
+
+            .hero-line {
+                display: block;
+                white-space: nowrap;
             }
 
             .hero-sub {
-                font-size: 1.42rem;
+                font-size: 1.22rem;
             }
 
             .section-title {
@@ -750,11 +772,11 @@
             <img src="배움터지기%20상표.jpg" alt="배움터지기" class="logo">
             <h1>PROTECTED VALUE SYSTEM</h1>
             <p class="hero-text">
-                전통(傳統) 위에 세운 순수(純粹)와 지혜(智慧)<br>
-                안정(安定)한 열린 배움터에서 창의(創意) 날개를 달아<br>
-                최고 가치(價値)를 향해 도약(跳躍)합니다.
+                <span class="hero-line">전통(傳統) 위에 세운 순수(純粹)와 지혜(智慧)</span>
+                <span class="hero-line">안정(安定)한 열린 배움터에서 창의(創意) 날개를 달아</span>
+                <span class="hero-line">최고 가치(價值)를 향해 도약(跳躍)합니다.</span>
             </p>
-            <p class="hero-sub">수호(守護) · 균형(均衡) · 비상(飛翔)</p>
+            <p class="hero-sub"><span class="hero-line">수호(守護) · 균형(均衡) · 비상(飛翔)</span></p>
         </div>
     </header>
 
@@ -762,8 +784,8 @@
         <h2 class="section-title">IDENTITY SYSTEM</h2>
         <div class="identity-content">
             <p class="identity-lead">
-                배움터지기 방패 마크는 전통(傳統)과 현대(現代) <span class="nowrap">조화(調和)를 바탕으로</span><br>
-                학문(學問)을 수호(守護)하고 인격(人格)과 윤리(倫理)를 지키는 상징(象徵) 체계(體系)입니다.
+                <span class="hero-line">배움터지기 방패 마크는 전통(傳統)과 현대(現代) 조화(調和)를 바탕으로</span>
+                <span class="hero-line">학문(學問)을 수호(守護)하고 인격(人格)과 윤리(倫理)를 지키는 상징(象徵) 체계(體系)입니다.</span>
             </p>
 
             <h3>청록색 바탕</h3>
