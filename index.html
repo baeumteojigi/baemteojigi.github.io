@@ -20,9 +20,9 @@
             --teal-deep: #1f3a38;
             --gold: #d2ad56;
             --dark: #223331;
-            --card: rgba(255, 255, 255, 0.96);
-            --paper: #f7f7f4;
-            --paper-2: #f2f4ef;
+            --card: rgba(255, 255, 255, 0.86);
+            --paper: rgba(247, 247, 244, 0.80);
+            --paper-2: rgba(242, 244, 239, 0.82);
         }
 
         html {
@@ -59,9 +59,9 @@
             z-index: 0;
             pointer-events: none;
             background: url('배움터지기%20상표.jpg') center center no-repeat;
-            background-size: clamp(1700px, 130vw, 2500px);
+            background-size: clamp(1800px, 132vw, 2600px);
             opacity: 0.10;
-            filter: blur(0.2px);
+            filter: blur(0.18px);
             transform: translate3d(var(--logo-x, 0px), var(--logo-y, 0px), 0);
             transition: transform 120ms linear, opacity 220ms ease;
         }
@@ -72,8 +72,8 @@
             inset: 0;
             z-index: 0;
             pointer-events: none;
-            background: radial-gradient(circle at top center, rgba(255,255,255,0.38), transparent 58%);
-            opacity: 0.46;
+            background: radial-gradient(circle at top center, rgba(255,255,255,0.36), transparent 58%);
+            opacity: 0.42;
         }
 
         body > * {
@@ -84,6 +84,11 @@
         a {
             color: inherit;
             text-decoration: none;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+            display: inline-block;
         }
 
         #top {
@@ -166,8 +171,8 @@
         }
 
         .logo {
-            width: min(820px, 90vw);
-            max-width: 90vw;
+            width: min(1120px, 94vw);
+            max-width: 94vw;
             border: 20px solid rgba(192, 192, 192, 0.98);
             border-radius: 42px;
             box-shadow: 0 0 140px rgba(95, 143, 138, 0.88);
@@ -177,10 +182,11 @@
 
         h1 {
             font-family: 'Noto Serif KR', serif;
-            font-size: clamp(3.9rem, 8vw, 6.5rem);
+            font-size: clamp(4.4rem, 8.8vw, 7.6rem);
             letter-spacing: 8px;
-            line-height: 1.12;
+            line-height: 1.08;
             margin-bottom: 28px;
+            word-break: keep-all;
         }
 
         .hero-text {
@@ -188,6 +194,7 @@
             line-height: 1.82;
             margin: 42px 0 26px;
             font-family: 'Gowun Batang', serif;
+            word-break: keep-all;
         }
 
         .hero-sub {
@@ -207,25 +214,6 @@
             scroll-margin-top: 140px;
             border-radius: 36px;
             box-shadow: 0 18px 44px rgba(0,0,0,0.04);
-            background-clip: padding-box;
-        }
-
-        section::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: url('배움터지기%20상표.jpg');
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            opacity: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        section > * {
-            position: relative;
-            z-index: 1;
         }
 
         #identity {
@@ -238,19 +226,19 @@
         }
 
         #history {
-            background: linear-gradient(180deg, rgba(242, 244, 239, 0.80), rgba(236, 241, 236, 0.84));
+            background: var(--paper-2);
         }
 
         #activity {
-            background: linear-gradient(180deg, rgba(247, 247, 244, 0.80), rgba(242, 244, 239, 0.84));
+            background: var(--paper);
         }
 
         #links {
-            background: linear-gradient(180deg, rgba(245, 247, 243, 0.80), rgba(239, 243, 240, 0.84));
+            background: rgba(245, 247, 243, 0.82);
         }
 
         #inquiry {
-            background: linear-gradient(180deg, rgba(243, 244, 240, 0.80), rgba(237, 240, 236, 0.84));
+            background: rgba(243, 244, 240, 0.82);
         }
 
         .section-title {
@@ -275,12 +263,12 @@
             padding: 112px 74px;
             color: #222;
             text-align: center;
-            background: rgba(255, 255, 255, 0.72);
+            background: rgba(255, 255, 255, 0.62);
             border-radius: 34px;
             box-shadow:
                 0 28px 96px rgba(0,0,0,0.14),
                 inset 0 1px 0 rgba(255,255,255,0.88);
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(8px) saturate(120%);
         }
 
         .identity-content h3 {
@@ -290,6 +278,7 @@
             line-height: 1.2;
             margin: 52px 0 18px;
             text-align: center;
+            word-break: keep-all;
         }
 
         .identity-content p {
@@ -298,12 +287,13 @@
             line-height: 1.55;
             font-family: 'Gowun Batang', serif;
             color: #2a2a2a;
+            word-break: keep-all;
         }
 
         .identity-lead {
             font-size: clamp(2.45rem, 2.25vw, 3.5rem);
             line-height: 1.58;
-            margin-bottom: 64px;
+            margin-bottom: 62px;
             color: #2a2a2a;
         }
 
@@ -327,18 +317,19 @@
         .history-card {
             max-width: 1020px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.84);
+            background: rgba(255, 255, 255, 0.70);
             border-radius: 30px;
             padding: 92px 56px;
             text-align: center;
             box-shadow: 0 16px 44px rgba(0,0,0,0.10);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(7px);
         }
 
         .history-card h3 {
             color: var(--teal-dark);
-            font-size: 2.1rem;
-            line-height: 1.25;
+            font-size: 2.9rem;
+            line-height: 1.2;
+            word-break: keep-all;
         }
 
         .history-card h2 {
@@ -346,11 +337,13 @@
             margin: 28px 0 20px;
             line-height: 1.18;
             font-family: 'Noto Serif KR', serif;
+            word-break: keep-all;
         }
 
         .history-card p {
-            font-size: 1.42rem;
+            font-size: 2.1rem;
             font-family: 'Gowun Batang', serif;
+            word-break: keep-all;
         }
 
         .carousel-frame {
@@ -428,14 +421,14 @@
         }
 
         .link-card {
-            background: rgba(255, 255, 255, 0.88);
+            background: rgba(255, 255, 255, 0.80);
             padding: 52px 34px;
             border-radius: 24px;
             text-align: center;
             box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
             display: block;
             transition: transform 0.28s ease, box-shadow 0.28s ease;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(6px);
         }
 
         .link-card:hover {
@@ -447,6 +440,7 @@
             font-size: 1.8rem;
             line-height: 1.35;
             font-family: 'Noto Serif KR', serif;
+            word-break: keep-all;
         }
 
         .link-card p {
@@ -457,7 +451,7 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1.15fr;
+            grid-template-columns: 1fr 1fr;
             gap: 22px;
             align-items: stretch;
             margin-top: 8px;
@@ -465,14 +459,14 @@
 
         .kakao-card,
         .email-card {
-            background: rgba(255,255,255,0.88);
+            background: rgba(255,255,255,0.80);
             border-radius: 28px;
             box-shadow: 0 14px 38px rgba(0,0,0,0.08);
             padding: 28px 24px;
             display: flex;
             align-items: center;
             gap: 18px;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(6px);
         }
 
         .kakao-card {
@@ -490,14 +484,18 @@
             flex: 0 0 auto;
         }
 
-        .kakao-copy {
+        .kakao-copy,
+        .email-copy {
             flex: 1 1 auto;
         }
 
-        .kakao-copy h3 {
+        .kakao-copy h3,
+        .email-label {
             font-size: 2.35rem;
             font-family: 'Noto Serif KR', serif;
             line-height: 1.2;
+            color: var(--teal-dark);
+            word-break: keep-all;
         }
 
         .kakao-copy p {
@@ -509,19 +507,6 @@
 
         .email-card {
             justify-content: flex-start;
-            gap: 18px;
-        }
-
-        .email-copy {
-            flex: 1 1 auto;
-        }
-
-        .email-label {
-            font-size: 2.35rem;
-            font-weight: 900;
-            color: var(--teal-dark);
-            line-height: 1.2;
-            font-family: 'Noto Serif KR', serif;
         }
 
         .email-address {
@@ -531,8 +516,9 @@
             font-family: 'Gowun Batang', serif;
             user-select: all;
             cursor: text;
-            margin-top: 3px;
+            margin-top: 4px;
             word-break: break-all;
+            line-height: 1.25;
         }
 
         footer {
@@ -573,13 +559,17 @@
             }
 
             .logo {
-                width: min(84vw, 720px);
+                width: min(86vw, 760px);
                 border-width: 16px;
                 border-radius: 32px;
             }
 
             h1 {
-                letter-spacing: 4px;
+                font-size: 3rem;
+                letter-spacing: 2px;
+                line-height: 1.08;
+                word-break: keep-all;
+                padding: 0 6px;
             }
 
             .section-title {
@@ -612,6 +602,10 @@
 
             .history-card {
                 padding: 72px 22px;
+            }
+
+            .history-card h3 {
+                font-size: 1.9rem;
             }
 
             .history-card p {
@@ -694,16 +688,15 @@
             }
 
             .logo {
-                width: min(82vw, 620px);
+                width: min(82vw, 650px);
             }
 
             h1 {
-                font-size: 2.95rem;
-                letter-spacing: 2px;
-                line-height: 1.08;
+                font-size: 2.55rem;
+                letter-spacing: 1px;
+                line-height: 1.06;
                 max-width: 100%;
                 padding: 0 6px;
-                word-break: keep-all;
             }
 
             .hero-text {
@@ -769,7 +762,7 @@
         <h2 class="section-title">IDENTITY SYSTEM</h2>
         <div class="identity-content">
             <p class="identity-lead">
-                배움터지기 방패 마크는 전통(傳統)과 현대(現代) 조화(調和)를 바탕으로<br>
+                배움터지기 방패 마크는 전통(傳統)과 현대(現代) <span class="nowrap">조화(調和)를 바탕으로</span><br>
                 학문(學問)을 수호(守護)하고 인격(人格)과 윤리(倫理)를 지키는 상징(象徵) 체계(體系)입니다.
             </p>
 
