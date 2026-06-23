@@ -28,7 +28,7 @@
     <!-- Open Graph / Social preview -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="배움터지기" />
-    <meta property="og:title" content="배움터지기 | 지식 수호 교육 브랜드" />
+    <meta property="og:title" content="배움터지기 | PROTECTED VALUE SYSTEM" />
     <meta property="og:description" content="배움터지기는 전통(傳統) 위에 세운 순수(純粹)와 지혜(智慧)를 바탕으로, 박물관과 다양한 배움터에서 배움을 사랑하는 이들과 수업을 이어 갑니다. 정서(情緒) 안정(安定)한 상태에서 탐구(探究)하고, 지식·기술·태도(知識·技術·態度)를 거쳐 각자 탁월(卓越)함으로 나아가는 배움. 우리는 학문(學問)을 수호(守護)하고, 균형(均衡) 있는 성장을 지향(志向)하며, 창의(創意) 날개로 더 높은 가치(價値)를 향해 비상(飛翔)합니다." />
     <meta property="og:url" content="https://baeumteojigi.github.io/" />
     <meta property="og:image" content="https://baeumteojigi.github.io/%EB%B0%B0%EC%9B%80%ED%84%B0%EC%A7%80%EA%B8%B0%20%EC%83%81%ED%91%9C.jpg" />
@@ -36,13 +36,13 @@
     <meta property="og:image:type" content="image/jpeg" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="배움터지기 | 지식 수호 교육 브랜드" />
+    <meta name="twitter:title" content="배움터지기 | PROTECTED VALUE SYSTEM" />
     <meta name="twitter:description" content="배움터지기는 전통(傳統) 위에 세운 순수(純粹)와 지혜(智慧)를 바탕으로, 박물관과 다양한 배움터에서 배움을 사랑하는 이들과 수업을 이어 갑니다. 정서(情緒) 안정(安定)한 상태에서 탐구(探究)하고, 지식·기술·태도(知識·技術·態度)를 거쳐 각자 탁월(卓越)함으로 나아가는 배움. 우리는 학문(學問)을 수호(守護)하고, 균형(均衡) 있는 성장을 지향(志向)하며, 창의(創意) 날개로 더 높은 가치(價値)를 향해 비상(飛翔)합니다." />
     <meta name="twitter:image" content="https://baeumteojigi.github.io/%EB%B0%B0%EC%9B%80%ED%84%B0%EC%A7%80%EA%B8%B0%20%EC%83%81%ED%91%9C.jpg" />
 
     <meta name="theme-color" content="#254e4b" />
 
-    <title>배움터지기 | 지식 수호 교육 브랜드</title>
+    <title>배움터지기 | PROTECTED VALUE SYSTEM</title>
 
     <!-- Structured data -->
     <script type="application/ld+json">
@@ -144,7 +144,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 30px;
+            gap: 20px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex: 0 0 auto;
         }
 
         .nav-title {
@@ -154,7 +161,6 @@
             color: #fff;
             white-space: nowrap;
             line-height: 1;
-            flex: 0 0 auto;
         }
 
         .nav-links {
@@ -175,6 +181,21 @@
         }
 
         .nav-links a:hover { text-decoration: underline; }
+
+        .nav-x {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            font-weight: 700;
+            white-space: nowrap;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .nav-x:hover {
+            background: rgba(255,255,255,0.08);
+            text-decoration: none;
+        }
 
         header {
             min-height: 100vh;
@@ -236,7 +257,6 @@
         }
 
         .hero-line { display: block; text-align: center; }
-
         .hero-phrase { display: inline-block; white-space: nowrap; }
 
         .hero-sub {
@@ -248,6 +268,14 @@
             white-space: nowrap;
             text-align: center;
             width: 100%;
+        }
+
+        .hero-x {
+            display: inline-block;
+            margin-top: 18px;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.86);
+            border-bottom: 1px solid rgba(255,255,255,0.25);
         }
 
         section {
@@ -657,6 +685,17 @@
 
             nav { padding: 14px 0; }
 
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .nav-left {
+                justify-content: center;
+                width: 100%;
+            }
+
             .nav-title { font-size: 1.4rem; }
             .nav-links a { font-size: 0.98rem; }
 
@@ -710,7 +749,10 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="#top" class="nav-title">배움터지기</a>
+            <div class="nav-left">
+                <a href="#top" class="nav-title">배움터지기</a>
+                <a class="nav-x" href="https://x.com/baeumteojigi" target="_blank" rel="noopener noreferrer" aria-label="배움터지기 X">X</a>
+            </div>
             <div class="nav-links">
                 <a href="#identity">정체성</a>
                 <a href="#history">연혁</a>
@@ -724,18 +766,18 @@
     <header id="top">
         <div>
             <img src="배움터지기%20상표.jpg" alt="배움터지기" class="logo">
-            <h1>배움터지기</h1>
+            <h1>PROTECTED VALUE SYSTEM</h1>
             <p class="hero-text">
                 <span class="hero-line">전통(傳統) 위에 세운 순수(純粹)와 지혜(智慧)</span>
                 <span class="hero-line">안정(安定)한 열린 배움터에서 <span class="hero-phrase">창의(創意) 날개를 달아</span></span>
                 <span class="hero-line">최고 가치(價値)를 향해 도약(跳躍)합니다.</span>
             </p>
-            <p class="hero-sub"><span class="hero-line">수호(守護) · 균형(均衡) · 비상(飛翔)</span></p>
+            <p class="hero-sub">수호(守護) · 균형(均衡) · 비상(飛翔)</p>
         </div>
     </header>
 
     <section id="identity">
-        <h2 class="section-title">정체성</h2>
+        <h2 class="section-title">IDENTITY SYSTEM</h2>
         <div class="identity-content">
             <p class="identity-lead">
                 <span class="hero-line">배움터지기 방패 마크는 전통(傳統)과 현대(現代) 조화(調和)를 바탕으로</span>
