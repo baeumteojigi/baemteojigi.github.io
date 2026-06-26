@@ -262,7 +262,9 @@
       padding: 160px 20px 100px;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(rgba(31, 58, 56, 0.68), rgba(31, 58, 56, 0.82)), url('https://picsum.photos/id/1015/1920/1080') center/cover;
+      background:
+        linear-gradient(rgba(31, 58, 56, 0.68), rgba(31, 58, 56, 0.82)),
+        url('https://picsum.photos/id/1015/1920/1080') center/cover;
       background-attachment: scroll;
     }
 
@@ -677,6 +679,7 @@
       }
     }
 
+    /* 스마트폰 */
     @media (max-width: 700px) {
       nav {
         padding: 14px 0;
@@ -845,11 +848,12 @@
       }
     }
 
-    /* 스마트폰 전용: 메인 문구를 읽기 쉽게 정리 */
+    /* 스마트폰 전용: 이전 흐름 복원 */
     html.device-phone body {
       background:
-        linear-gradient(rgba(247, 247, 244, 0.93), rgba(247, 247, 244, 0.93)) !important;
-      background-image: none !important;
+        linear-gradient(rgba(247, 247, 244, 0.92), rgba(247, 247, 244, 0.92)),
+        url('배움터지기%20상표.jpg') center center no-repeat !important;
+      background-size: 2000px !important;
       background-attachment: scroll !important;
     }
 
@@ -859,20 +863,21 @@
     }
 
     html.device-phone header {
-      background: linear-gradient(rgba(31, 58, 56, 0.84), rgba(31, 58, 56, 0.92)) !important;
-      background-image: none !important;
+      background:
+        linear-gradient(rgba(31, 58, 56, 0.78), rgba(31, 58, 56, 0.90)),
+        url('https://picsum.photos/id/1015/1920/1080') center/cover !important;
       background-attachment: scroll !important;
     }
 
     html.device-phone h1 {
-      font-size: 1.32rem;
+      font-size: 1.34rem;
       letter-spacing: 0.2px;
       white-space: normal;
     }
 
     html.device-phone .hero-text {
       font-size: 0.92rem;
-      line-height: 1.52;
+      line-height: 1.5;
     }
 
     html.device-phone .identity-content,
@@ -884,7 +889,7 @@
       -webkit-backdrop-filter: none !important;
     }
 
-    /* 태블릿 전용: 밝은 배경 + 큰 제목 잘림 방지 */
+    /* 태블릿 전용 */
     html.device-tablet body {
       background:
         linear-gradient(180deg, #f7f8f5 0%, #eef2ee 50%, #e8eeea 100%) !important;
@@ -912,7 +917,7 @@
     }
 
     html.device-tablet h1 {
-      font-size: clamp(2.2rem, 4.2vw, 4rem);
+      font-size: clamp(2.0rem, 4.0vw, 4rem);
       letter-spacing: 2px;
       white-space: normal;
       line-height: 1.08;
@@ -937,6 +942,28 @@
       background-attachment: scroll !important;
     }
 
+    /* 태블릿의 활동 사진 영역: 고정 높이로 깜빡임 방지 */
+    html.device-tablet #activity {
+      padding-bottom: 120px;
+    }
+
+    html.device-tablet .carousel {
+      height: min(58vw, 760px) !important;
+      transition: none !important;
+      background: rgba(255,255,255,0.50);
+    }
+
+    html.device-tablet .carousel-inner,
+    html.device-tablet .carousel-item,
+    html.device-tablet .carousel-item img {
+      height: 100%;
+    }
+
+    html.device-tablet .carousel-item img {
+      object-fit: contain;
+      background: rgba(255,255,255,0.72);
+    }
+
     /* 데스크톱 */
     html.device-desktop body {
       background:
@@ -959,17 +986,6 @@
       background:
         linear-gradient(rgba(31, 58, 56, 0.68), rgba(31, 58, 56, 0.82)),
         url('https://picsum.photos/id/1015/1920/1080') center/cover !important;
-    }
-
-    html.device-desktop header,
-    html.device-desktop nav,
-    html.device-desktop .identity-content,
-    html.device-desktop .history-card,
-    html.device-desktop .link-card,
-    html.device-desktop .kakao-card,
-    html.device-desktop .email-card {
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1011,9 +1027,9 @@
       <img src="배움터지기%20상표.jpg" alt="배움터지기" class="logo">
       <h1>PROTECTED VALUE SYSTEM</h1>
       <p class="hero-text">
-        <span class="hero-line"><span class="term">전통(傳統)</span> 위에 세운 <span class="term">순수(純粹)</span>와 <span class="term">지혜(智慧)</span></span>
-        <span class="hero-line"><span class="term">안정(安定)</span>한 열린 배움터에서 <span class="hero-phrase"><span class="term">창의(創意)</span> 날개를 달아</span></span>
-        <span class="hero-line"><span class="term">최고 가치(價値)</span>를 향해 <span class="term">도약(跳躍)</span>합니다.</span>
+        <span class="hero-line"><span class="nowrap">전통(傳統) 위에 세운 순수(純粹)와 지혜(智慧)</span></span>
+        <span class="hero-line">안정(安定)한 열린 배움터에서 <span class="hero-phrase">창의(創意) 날개를 달아</span></span>
+        <span class="hero-line">최고 가치(價値)를 향해 도약(跳躍)합니다.</span>
       </p>
       <p class="hero-sub">수호(守護) · 균형(均衡) · 비상(飛翔)</p>
     </div>
@@ -1157,6 +1173,12 @@
     let intervalId = null;
 
     function updateCarouselHeight() {
+      if (root.classList.contains('device-tablet')) {
+        const fixedHeight = Math.min(Math.max(Math.round(window.innerWidth * 0.58), 420), 760);
+        carousel.style.height = `${fixedHeight}px`;
+        return;
+      }
+
       const currentItem = inner.children[current];
       if (!currentItem) return;
 
