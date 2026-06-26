@@ -138,11 +138,6 @@
       text-decoration: none;
     }
 
-    .nowrap {
-      white-space: nowrap;
-      display: inline-block;
-    }
-
     #top {
       scroll-margin-top: 140px;
     }
@@ -542,12 +537,6 @@
       word-break: keep-all;
     }
 
-    .link-card p {
-      font-size: 1.16rem;
-      margin-top: 8px;
-      font-family: 'Gowun Batang', serif;
-    }
-
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -880,9 +869,10 @@
       }
     }
 
-    /* 태블릿/터치 기기에서 깜빡임 방지 핵심 */
+    /* 태블릿/터치 기기: 깜빡임 방지 핵심 */
     @media (hover: none), (pointer: coarse) {
       body {
+        background-image: none !important;
         background-attachment: scroll !important;
       }
 
@@ -892,10 +882,19 @@
       }
 
       header {
+        background-image: none !important;
+        background: linear-gradient(rgba(31, 58, 56, 0.90), rgba(31, 58, 56, 0.94));
         background-attachment: scroll !important;
       }
 
-      nav,
+      nav {
+        position: sticky;
+        top: 0;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      }
+
       .identity-content,
       .history-card,
       .link-card,
@@ -906,8 +905,8 @@
       }
     }
 
-    /* JS가 touch-device 클래스를 붙이는 경우에도 강제로 비활성화 */
     html.touch-device body {
+      background-image: none !important;
       background-attachment: scroll !important;
     }
 
@@ -917,10 +916,18 @@
     }
 
     html.touch-device header {
+      background-image: none !important;
+      background: linear-gradient(rgba(31, 58, 56, 0.90), rgba(31, 58, 56, 0.94));
       background-attachment: scroll !important;
     }
 
-    html.touch-device nav,
+    html.touch-device nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
     html.touch-device .identity-content,
     html.touch-device .history-card,
     html.touch-device .link-card,
