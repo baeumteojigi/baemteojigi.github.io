@@ -137,7 +137,14 @@
 
     .term {
       white-space: nowrap;
-      display: inline-block;
+      display: inline-flex;
+      align-items: baseline;
+    }
+
+    .nowrap {
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: baseline;
     }
 
     #top {
@@ -255,9 +262,7 @@
       padding: 160px 20px 100px;
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(rgba(31, 58, 56, 0.68), rgba(31, 58, 56, 0.82)),
-        url('https://picsum.photos/id/1015/1920/1080') center/cover;
+      background: linear-gradient(rgba(31, 58, 56, 0.68), rgba(31, 58, 56, 0.82)), url('https://picsum.photos/id/1015/1920/1080') center/cover;
       background-attachment: scroll;
     }
 
@@ -672,7 +677,6 @@
       }
     }
 
-    /* 스마트폰 */
     @media (max-width: 700px) {
       nav {
         padding: 14px 0;
@@ -719,8 +723,8 @@
       }
 
       .hero-text {
-        font-size: 0.98rem;
-        line-height: 1.58;
+        font-size: 0.94rem;
+        line-height: 1.52;
         margin: 14px auto 12px;
         text-shadow: 0 2px 12px rgba(0,0,0,0.45);
       }
@@ -841,10 +845,49 @@
       }
     }
 
-    /* 태블릿 */
+    /* 스마트폰 전용: 메인 문구를 읽기 쉽게 정리 */
+    html.device-phone body {
+      background:
+        linear-gradient(rgba(247, 247, 244, 0.93), rgba(247, 247, 244, 0.93)) !important;
+      background-image: none !important;
+      background-attachment: scroll !important;
+    }
+
+    html.device-phone body::before,
+    html.device-phone body::after {
+      display: none !important;
+    }
+
+    html.device-phone header {
+      background: linear-gradient(rgba(31, 58, 56, 0.84), rgba(31, 58, 56, 0.92)) !important;
+      background-image: none !important;
+      background-attachment: scroll !important;
+    }
+
+    html.device-phone h1 {
+      font-size: 1.32rem;
+      letter-spacing: 0.2px;
+      white-space: normal;
+    }
+
+    html.device-phone .hero-text {
+      font-size: 0.92rem;
+      line-height: 1.52;
+    }
+
+    html.device-phone .identity-content,
+    html.device-phone .history-card,
+    html.device-phone .link-card,
+    html.device-phone .kakao-card,
+    html.device-phone .email-card {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    /* 태블릿 전용: 밝은 배경 + 큰 제목 잘림 방지 */
     html.device-tablet body {
       background:
-        linear-gradient(180deg, #f5f8f7 0%, #eef4f1 100%) !important;
+        linear-gradient(180deg, #f7f8f5 0%, #eef2ee 50%, #e8eeea 100%) !important;
       background-image: none !important;
       background-attachment: scroll !important;
     }
@@ -855,8 +898,8 @@
     }
 
     html.device-tablet header {
+      background: linear-gradient(180deg, #3e6a67 0%, #2c5a57 50%, #254e4b 100%) !important;
       background-image: none !important;
-      background: linear-gradient(180deg, #2c5a57 0%, #254e4b 100%) !important;
       background-attachment: scroll !important;
     }
 
@@ -868,6 +911,19 @@
       box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     }
 
+    html.device-tablet h1 {
+      font-size: clamp(2.2rem, 4.2vw, 4rem);
+      letter-spacing: 2px;
+      white-space: normal;
+      line-height: 1.08;
+      max-width: 92vw;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.35);
+    }
+
+    html.device-tablet .hero-sub {
+      color: var(--gold) !important;
+    }
+
     html.device-tablet .identity-content,
     html.device-tablet .history-card,
     html.device-tablet .link-card,
@@ -875,6 +931,10 @@
     html.device-tablet .email-card {
       backdrop-filter: none !important;
       -webkit-backdrop-filter: none !important;
+    }
+
+    html.device-tablet * {
+      background-attachment: scroll !important;
     }
 
     /* 데스크톱 */
@@ -1075,12 +1135,12 @@
       const coarse = window.matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0;
       const fine = window.matchMedia('(pointer: fine)').matches && !coarse;
 
-      if (fine && width >= 1025) {
-        root.classList.add('device-desktop');
-      } else if (coarse && width <= 700) {
+      if (width <= 768) {
         root.classList.add('device-phone');
-      } else if (coarse) {
+      } else if (coarse && width <= 1400) {
         root.classList.add('device-tablet');
+      } else if (fine) {
+        root.classList.add('device-desktop');
       } else {
         root.classList.add('device-desktop');
       }
