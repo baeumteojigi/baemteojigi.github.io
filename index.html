@@ -91,11 +91,10 @@
       color: #222;
       background:
         linear-gradient(rgba(247, 247, 244, 0.88), rgba(247, 247, 244, 0.88)),
-        url('배움터지기%20상표.jpg') center center no-repeat;
+        url('배움터지기%20상표.jpg') center center fixed;
       background-size: 2300px;
-      background-position: center center;
       background-repeat: no-repeat;
-      background-attachment: scroll;
+      background-position: center center;
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -107,7 +106,6 @@
       inset: -12%;
       z-index: 0;
       pointer-events: none;
-      display: none;
       background: url('배움터지기%20상표.jpg') center center no-repeat;
       background-size: clamp(1800px, 132vw, 2600px);
       opacity: 0.10;
@@ -123,7 +121,6 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      display: none;
       background: radial-gradient(circle at top center, rgba(255,255,255,0.36), transparent 58%);
       opacity: 0.42;
     }
@@ -136,6 +133,11 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    .term {
+      white-space: nowrap;
+      display: inline-block;
     }
 
     #top {
@@ -316,12 +318,13 @@
     .hero-sub {
       font-size: clamp(2.35rem, 3.4vw, 3.1rem);
       font-weight: 800;
-      color: var(--gold);
+      color: var(--gold) !important;
       line-height: 1.25;
       letter-spacing: 0.3px;
       white-space: nowrap;
       text-align: center;
       width: 100%;
+      text-shadow: 0 1px 0 rgba(0,0,0,0.12);
     }
 
     section {
@@ -339,9 +342,8 @@
       max-width: 100%;
       border-radius: 0;
       color: white;
-      background:
-        linear-gradient(180deg, rgba(41, 74, 71, 0.94), rgba(32, 56, 52, 0.97)),
-        linear-gradient(135deg, rgba(95, 143, 138, 0.22), rgba(255, 255, 255, 0.02));
+      background: linear-gradient(180deg, rgba(41, 74, 71, 0.94), rgba(32, 56, 52, 0.97)),
+                  linear-gradient(135deg, rgba(95, 143, 138, 0.22), rgba(255, 255, 255, 0.02));
     }
 
     #history {
@@ -406,6 +408,7 @@
       font-family: 'Gowun Batang', serif;
       color: #2a2a2a;
       word-break: keep-all;
+      overflow-wrap: normal;
     }
 
     .identity-lead {
@@ -669,7 +672,7 @@
       }
     }
 
-    /* Phone: 이전에 괜찮았던 버전의 흐름 유지 */
+    /* 스마트폰 */
     @media (max-width: 700px) {
       nav {
         padding: 14px 0;
@@ -838,12 +841,12 @@
       }
     }
 
-    /* Tablet: 큰 세로 화면에서 깜빡임 방지 */
+    /* 태블릿 */
     html.device-tablet body {
+      background:
+        linear-gradient(180deg, #f5f8f7 0%, #eef4f1 100%) !important;
       background-image: none !important;
       background-attachment: scroll !important;
-      background:
-        linear-gradient(rgba(247, 247, 244, 0.92), rgba(247, 247, 244, 0.92)) !important;
     }
 
     html.device-tablet body::before,
@@ -853,7 +856,7 @@
 
     html.device-tablet header {
       background-image: none !important;
-      background: linear-gradient(rgba(31, 58, 56, 0.90), rgba(31, 58, 56, 0.96)) !important;
+      background: linear-gradient(180deg, #2c5a57 0%, #254e4b 100%) !important;
       background-attachment: scroll !important;
     }
 
@@ -874,7 +877,7 @@
       -webkit-backdrop-filter: none !important;
     }
 
-    /* Desktop only: 원래 분위기 유지 */
+    /* 데스크톱 */
     html.device-desktop body {
       background:
         linear-gradient(rgba(247, 247, 244, 0.88), rgba(247, 247, 244, 0.88)),
@@ -948,9 +951,9 @@
       <img src="배움터지기%20상표.jpg" alt="배움터지기" class="logo">
       <h1>PROTECTED VALUE SYSTEM</h1>
       <p class="hero-text">
-        <span class="hero-line">전통(傳統) 위에 세운 순수(純粹)와 지혜(智慧)</span>
-        <span class="hero-line">안정(安定)한 열린 배움터에서 <span class="hero-phrase">창의(創意) 날개를 달아</span></span>
-        <span class="hero-line">최고 가치(價値)를 향해 도약(跳躍)합니다.</span>
+        <span class="hero-line"><span class="term">전통(傳統)</span> 위에 세운 <span class="term">순수(純粹)</span>와 <span class="term">지혜(智慧)</span></span>
+        <span class="hero-line"><span class="term">안정(安定)</span>한 열린 배움터에서 <span class="hero-phrase"><span class="term">창의(創意)</span> 날개를 달아</span></span>
+        <span class="hero-line"><span class="term">최고 가치(價値)</span>를 향해 <span class="term">도약(跳躍)</span>합니다.</span>
       </p>
       <p class="hero-sub">수호(守護) · 균형(均衡) · 비상(飛翔)</p>
     </div>
@@ -960,31 +963,31 @@
     <h2 class="section-title">IDENTITY SYSTEM</h2>
     <div class="identity-content">
       <p class="identity-lead">
-        <span class="hero-line">배움터지기 방패 마크는 전통(傳統)과 현대(現代) 조화(調和)를 바탕으로</span>
-        <span class="hero-line">학문(學問)을 수호(守護)하고 인격(人格)과 윤리(倫理)를 지키는 상징(象徵) 체계(體系)입니다.</span>
+        <span class="hero-line">배움터지기 방패 마크는 <span class="term">전통(傳統)</span>과 <span class="term">현대(現代)</span> <span class="term">조화(調和)</span>를 바탕으로</span>
+        <span class="hero-line"><span class="term">학문(學問)</span>을 <span class="term">수호(守護)</span>하고 <span class="term">인격(人格)</span>과 <span class="term">윤리(倫理)</span>를 지키는 <span class="term">상징(象徵)</span> <span class="term">체계(體系)</span>입니다.</span>
       </p>
 
       <h3>청록색 바탕</h3>
-      <p>정서(情緒) 안정(安定)과 치유(治癒) 공간(空間)을 상징(象徵)하며, 창의성(創意性) 탐구(探究) 지향(志向)과 투명(透明)하고 청렴(淸廉)한 교육(教育) 공간 가치(價値)를 담습니다.</p>
+      <p><span class="term">정서(情緒)</span> <span class="term">안정(安定)</span>과 <span class="term">치유(治癒)</span> <span class="term">공간(空間)</span>을 <span class="term">상징(象徵)</span>하며, <span class="term">창의성(創意性)</span> <span class="term">탐구(探究)</span> <span class="term">지향(志向)</span>과 <span class="term">투명(透明)</span>하고 <span class="term">청렴(淸廉)</span>한 <span class="term">교육(教育)</span> 공간 <span class="term">가치(價値)</span>를 담습니다.</p>
 
       <h3>월계관</h3>
-      <p>학문(學問)·덕행(德行)·인격(人格)에서 우수(優秀)함을 추구(追求)하며 완전(完全)성과 끊임없는 성장(成長)을 의미(意味)합니다.</p>
+      <p><span class="term">학문(學問)</span>·<span class="term">덕행(德行)</span>·<span class="term">인격(人格)</span>에서 <span class="term">우수(優秀)</span>함을 <span class="term">추구(追求)</span>하며 <span class="term">완전(完全)</span>성과 끊임없는 <span class="term">성장(成長)</span>을 의미(意味)합니다.</p>
 
       <h3>별 3개</h3>
-      <p>지식(知識) · 기술(技術) · 태도(態度)를 균형(均衡) 있게 갖추어 개개인 탁월(卓越)함을 향해 나아가는 단계(段階)를 나타냅니다.</p>
+      <p><span class="term">지식(知識)</span> · <span class="term">기술(技術)</span> · <span class="term">태도(態度)</span>를 <span class="term">균형(均衡)</span> 있게 갖추어 개개인 <span class="term">탁월(卓越)</span>함을 향해 나아가는 <span class="term">단계(段階)</span>를 나타냅니다.</p>
 
       <h3>책</h3>
-      <p>전통(傳統) 위 열린 탐구(探究), 학습(學習)과 연구(硏究) 여정(旅程)을 상징(象徵)하며 전통(傳統)과 현대성(現代性) 조화(調和)를 나타냅니다.</p>
+      <p><span class="term">전통(傳統)</span> 위 열린 <span class="term">탐구(探究)</span>, <span class="term">학습(學習)</span>과 <span class="term">연구(硏究)</span> <span class="term">여정(旅程)</span>을 <span class="term">상징(象徵)</span>하며 <span class="term">전통(傳統)</span>과 <span class="term">현대성(現代性)</span> <span class="term">조화(調和)</span>를 나타냅니다.</p>
 
       <h3>리본</h3>
-      <p>견고(堅固)한 기반(基盤)을 상징(象徵)하며, 지향(志向)하는 가치(價値)와 모토를 담는 그릇입니다.</p>
+      <p><span class="term">견고(堅固)</span>한 <span class="term">기반(基盤)</span>을 <span class="term">상징(象徵)</span>하며, 지향(志向)하는 <span class="term">가치(價値)</span>와 모토를 담는 그릇입니다.</p>
 
       <h3>은색 방패</h3>
-      <p>순수(純粹)·성실(誠實)과 평화(平和)·화합(和合)을 기반(基盤)으로 지혜(智慧)롭고 통찰력(洞察力) 있는 학문(學問) 추구(追求)를 강조(強調)합니다. 동시에 안전(安全)하고 혁신(革新) 학습(學習) 공동체(共同體)를 의미(意味)합니다.</p>
+      <p><span class="term">순수(純粹)</span>·<span class="term">성실(誠實)</span>과 <span class="term">평화(平和)</span>·<span class="term">화합(和合)</span>을 <span class="term">기반(基盤)</span>으로 <span class="term">지혜(智慧)</span>롭고 <span class="term">통찰력(洞察力)</span> 있는 <span class="term">학문(學問)</span> <span class="term">추구(追求)</span>를 <span class="term">강조(強調)</span>합니다. 동시에 <span class="term">안전(安全)</span>하고 <span class="term">혁신(革新)</span> <span class="term">학습(學習)</span> <span class="term">공동체(共同體)</span>를 의미(意味)합니다.</p>
 
       <h2 class="identity-tagline">KNOWLEDGE GUARDIAN</h2>
       <p class="identity-bottom">
-        학문(學問)을 수호(守護)하고, 균형(均衡)을 지키며, 더 높은 가치(價値)를 향해 비상(飛翔)합니다.
+        <span class="term">학문(學問)</span>을 <span class="term">수호(守護)</span>하고, <span class="term">균형(均衡)</span>을 지키며, 더 높은 <span class="term">가치(價値)</span>를 향해 <span class="term">비상(飛翔)</span>합니다.
       </p>
     </div>
   </section>
